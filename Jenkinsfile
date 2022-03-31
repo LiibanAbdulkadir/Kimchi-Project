@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/TobiasBjorlin/auto21.git'
+                git 'https://github.com/LiibanAbdulkadir/Kimchi-Project.git'
             }
         }
         stage('Robot'){
