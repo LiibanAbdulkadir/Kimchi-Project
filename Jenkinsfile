@@ -6,8 +6,5 @@ pipeline {
                 git 'https://github.com/LiibanAbdulkadir/Kimchi-Project.git'
             }
         }
-        stage('Robot'){
-        
-        }
     }
 }
