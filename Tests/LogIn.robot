@@ -1,36 +1,17 @@
 *** Settings ***
 
 Documentation  Testsuite Login
+Resource  ../Resources/keywords.robot
 Library  SeleniumLibrary
 
 Suite Setup  Begin Web Test
 Suite Teardown  End Web Test
 
 *** Variables ***
+${BROWSER}  chrome
 ${BROWSER}  headlesschrome
+
 ${URL}  https://app.labelf.ai/login
-
-
-*** Keywords ***
-
-Begin Web Test
-    ${chrome_options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
-    Call Method    ${chrome_options}    add_argument    test-type
-    Call Method    ${chrome_options}    add_argument    --disable-extensions
-    Call Method    ${chrome_options}    add_argument    --headless
-    Call Method    ${chrome_options}    add_argument    --disable-gpu
-    Call Method    ${chrome_options}    add_argument    --no-sandbox
-    Create Webdriver    Chrome    chrome_options=${chrome_options}
-
-    Go To  ${URL}
-
-End Web Test
-    Close Browser
-
-Navigate To labelf Web Page
-    Go To  ${URL}
-    Wait Until Page Contains  Don't have an account? Sign up
-
 
 *** Test Cases ***
 Open Web Page And Verify
