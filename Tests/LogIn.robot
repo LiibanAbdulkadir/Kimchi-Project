@@ -8,7 +8,6 @@ Suite Setup  Begin Web Test
 Suite Teardown  End Web Test
 
 *** Variables ***
-${BROWSER}  chrome
 ${BROWSER}  headlesschrome
 
 ${URL}  https://app.labelf.ai/login
@@ -17,4 +16,4 @@ ${URL}  https://app.labelf.ai/login
 Open Web Page And Verify
     [Documentation]
     [Tags]  Smoke
-    Navigate To labelf web page
+    Navigate To labelf Web page
