@@ -5,6 +5,7 @@ pipeline {
             steps {
                 git 'https://github.com/LiibanAbdulkadir/Kimchi-Project.git'
             }
+        }
              stage('Robot Framework System tests with Selenium') {
                     steps {
 
@@ -31,5 +32,5 @@ pipeline {
                         }
                     }
             }
-        }
+        
     }
