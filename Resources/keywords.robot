@@ -9,9 +9,10 @@ Begin Web Test
     Call Method    ${chrome_options}    add_argument    --no-sandbox
     Create Webdriver    Chrome    chrome_options=${chrome_options}
 
+    Go To  ${URL}
+
 End Web Test
     Close Browser
 
 Navigate To labelf Web Page
-    Go To  ${URL}
     Wait Until Page Contains  Don't have an account? Sign up

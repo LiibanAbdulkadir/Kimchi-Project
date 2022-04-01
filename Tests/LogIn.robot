@@ -9,6 +9,8 @@ Suite Teardown  End Web Test
 
 *** Variables ***
 ${BROWSER}  chrome
+${BROWSER}  headlesschrome
+
 ${URL}  https://app.labelf.ai/login
 
 *** Test Cases ***
