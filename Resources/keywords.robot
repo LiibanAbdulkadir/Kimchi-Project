@@ -1,6 +1,5 @@
 *** Keywords ***
 
-
 Begin Web Test
     ${chrome_options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
     Call Method    ${chrome_options}    add_argument    test-type
@@ -13,5 +12,6 @@ Begin Web Test
 End Web Test
     Close Browser
 
-Navigate To labelf Web Page
+Navigate To Labelf Web Page
+    Go To  ${URL}
     Wait Until Page Contains  Don't have an account? Sign up
