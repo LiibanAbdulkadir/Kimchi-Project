@@ -19,11 +19,11 @@ ${URL}  https://app.labelf.ai/login
 Begin Web Test
      ${chrome_options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
     Call Method    ${chrome_options}    add_argument    test-type
+
     Call Method    ${chrome_options}    add_argument    --disable-extensions
     Call Method    ${chrome_options}    add_argument    --headless
     Call Method    ${chrome_options}    add_argument    --disable-gpu
-    Call Method    ${chrome_options}    add_argument    --no-sandbox
-    Create Webdriver    Chrome   '/home/<user>/chromedriver'  chrome_options=${chrome_options}
+    Create Webdriver    Chrome    chrome_options=${chrome_options}
     Go To    ${URL}
     Wait Until Page Contains  Don't have an account? Sign up
 End Web Test
