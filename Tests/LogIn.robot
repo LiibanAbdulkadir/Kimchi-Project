@@ -4,8 +4,8 @@ Documentation  Testsuite Login
 Resource  ../Resources/keywords.robot
 Library  SeleniumLibrary
 
-Test Setup  Begin Web Test
-Test Teardown  End Web Test
+Suite Setup  Begin Web Test
+Suite Teardown  End Web Test
 
 *** Variables ***
 ${BROWSER}  chrome
