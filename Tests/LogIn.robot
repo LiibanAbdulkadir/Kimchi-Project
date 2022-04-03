@@ -23,7 +23,7 @@ Begin Web Test
     Call Method    ${chrome_options}    add_argument    --headless
     Call Method    ${chrome_options}    add_argument    --disable-gpu
     Call Method    ${chrome_options}    add_argument    --no-sandbox
-    Create Webdriver    Chrome    chrome_options=${chrome_options}
+    Create Webdriver    Chrome   '/home/<user>/chromedriver'  chrome_options=${chrome_options}
     Go To    ${URL}
     Wait Until Page Contains  Don't have an account? Sign up
 End Web Test
