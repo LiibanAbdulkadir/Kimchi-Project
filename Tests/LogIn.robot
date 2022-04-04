@@ -12,7 +12,11 @@ ${BROWSER}  chrome
 ${URL}  https://app.labelf.ai/login
 
 *** Test Cases ***
-Open Web Page And Verify
-    [Documentation]
-    [Tags]  Smoke
-    Navigate To labelf web page
+
+User login to Labelf
+    [Documentation]  Testcase for user login to labelf
+    [Tags]  Testcase 1
+    Given input user credential
+          Confirm Cookie
+    When press login button
+    Then Confirm user logged in
