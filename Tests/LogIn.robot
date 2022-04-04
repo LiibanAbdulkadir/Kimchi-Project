@@ -11,6 +11,7 @@ Suite Teardown  End Web Test
 ${BROWSER}  chrome
 ${URL}  https://app.labelf.ai/login
 
+
 *** Test Cases ***
 Open Web Page And Verify
     [Documentation]
