@@ -31,9 +31,7 @@ User Navigate To Workspace
 User Creat a Model
     [Documentation]  Testcase for user creat a model on labelf
     [Tags]  Testcase 2
-    Input User Credential
-    Confirm Cookie
-    Press Login Button
+    Go to  https://app.labelf.ai/main/387/models/view
     Creat a Model
     Select an Existing Dataset
     Set Name and Description For Model

@@ -66,8 +66,8 @@ Set Name and Description For Model
      wait until page contains  My Models
 Verify your Model Exist
      page should contain   Survey Data Model
-    Sleep  3s
-    Click Button  ${Confirm cookie button}
+
+
 
 Open top burger drop down menu
     wait until page contains element  ${Top burger drop down menu}
