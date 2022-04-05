@@ -16,7 +16,14 @@ ${URL}  https://app.labelf.ai/login
 User login to Labelf
     [Documentation]  Testcase for user login to labelf
     [Tags]  Testcase 1
-    Given input user credential
+    Given Input user credential
           Confirm Cookie
-    When press login button
+    When Press login button
     Then Confirm user logged in
+
+User Navigate To Workspace
+    [Documentation]  Testcase for user navigate to Workspace
+    [Tags]  Testcase 2
+    Given Confirm user logged in
+    When Open top burger drop down menu
+    Then Navigate to Workspace 387
