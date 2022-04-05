@@ -27,3 +27,31 @@ Confirm user logged in
 Confirm Cookie
     Sleep  5s
     Click Button  //*[@id="diffuse-cookie-notice"]/div/div/div/div[2]/button[3]
+
+Creat a Model
+     Wait Until Page Contains  Models
+     sleep  5s
+     click element   //*[@id="app"]/div[7]/div[1]/main/div/div/div[1]/nav/div[1]/a/div/i
+     Wait Until Page Contains  Add a model
+     sleep  2s
+     click button  //*[@id="app"]/div[2]/div/div/div[2]/div/div[1]/div/div/div[2]/button
+     Wait Until Page Contains  Setup
+Select an Existing Dataset
+     Scroll Element Into View  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]
+     sleep  5s
+     click button   //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/div[2]/button
+     Wait Until Page Contains  Please click on the column
+     sleep  5s
+     Scroll Element Into View  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[2]/button
+     click button  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[2]/button
+     sleep  5s
+Set Name and Description For Model
+     Press Keys  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/form/div[1]/div/div/div[1]/div/div/div[1]/div/input  CTRL+A+DELETE
+     input text  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/form/div[1]/div/div/div[1]/div/div/div[1]/div/input   Survey Data Model
+     sleep  2s
+     input text  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/form/div[1]/div/div/div[2]/div/div/div[1]/div/textarea  This is A Model
+     sleep  5s
+     click button  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/form/div[2]/button
+     wait until page contains  My Models
+Verify your Model Exist
+     page should contain   Survey Data Model

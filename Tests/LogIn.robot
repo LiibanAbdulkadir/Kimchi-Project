@@ -21,3 +21,14 @@ User login to Labelf
           Confirm Cookie
     When press login button
     Then Confirm user logged in
+
+User Creat a Model
+    [Documentation]  Testcase for user creat a model on labelf
+    [Tags]  Testcase 2
+    Input User Credential
+    Confirm Cookie
+    Press Login Button
+    Creat a Model
+    Select an Existing Dataset
+    Set Name and Description For Model
+    Verify your Model Exist
