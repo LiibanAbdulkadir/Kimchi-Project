@@ -9,6 +9,7 @@ ${Confirm cookie button}  //*[@id="diffuse-cookie-notice"]/div/div/div/div[2]/bu
 ${Top burger drop down menu}  //*[@class="v-btn v-btn--flat v-btn--large theme--light"]
 
 
+
 *** Keywords ***
 
 Begin Web Test
@@ -42,7 +43,7 @@ Confirm Cookie
 Creat a Model
      Wait Until Page Contains  Models
      sleep  5s
-     click element   //*[@id="app"]/div[7]/div[1]/main/div/div/div[1]/nav/div[1]/a/div/i
+     click element   //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a
      Wait Until Page Contains  Add a model
      sleep  2s
      click button  //*[@id="app"]/div[2]/div/div/div[2]/div/div[1]/div/div/div[2]/button
