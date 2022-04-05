@@ -51,10 +51,10 @@ Confirm Cookie
     Click Button  ${Confirm cookie button}
 
 Creat a Model
+     sleep  3s
      Wait Until Page Contains  Models
      Sleep  3s
      Click Element   ${newModelButton}
-     sleep  3s
      Wait Until Page Contains  Add a model
      Click Button  ${continueButton}
      Wait Until Page Contains  Setup
