@@ -10,8 +10,7 @@ Suite Teardown  End Web Test
 *** Variables ***
 ${BROWSER}  chrome
 ${URL}  https://app.labelf.ai/login
-${SingleModelOptionsButton}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[3]/div/button/div/i
-${DeleteOption}  //*[@id="app"]/div[3]/div/div/div[2]/a/div[1]/div
+
 *** Test Cases ***
 
 User login to Labelf
@@ -36,3 +35,12 @@ User Creat a Model
     Select an Existing Dataset
     Set Name and Description For Model
     Verify your Model Exist
+
+Delete Single Model
+    [Documentation]  Testcase for deleting a model, to be used after creating a model. Doesn't work with more than 1 model on workspace.
+    [Tags]  Testcase 4
+
+    Given User Is Logged In And On An Workspace Containing One Model
+    When User Opens Single Model Options Dropdown List
+    And User Clicks Delete Model Option
+    Then Workspace Is Empty

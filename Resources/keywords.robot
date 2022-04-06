@@ -18,6 +18,8 @@ ${modelName}   Data Model
 ${inputDescriptiontextField}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/form/div[1]/div/div/div[2]/div/div/div[1]/div/textarea
 ${modelDescription}  This is A Model
 ${createModelButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/form/div[2]/button
+${SingleModelOptionsButton}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[3]/div/button/div/i
+${DeleteOption}  //*[@class="v-icon icon-menu-danger material-icons theme--light"]
 
 
 *** Keywords ***
@@ -85,11 +87,18 @@ Navigate to Workspace 387
     Click element  //*[@href="/main/387/models/view"]
     Wait Until Location Is  https://app.labelf.ai/main/387/models/view
 
-Open Single Model Options Dropdown List
+User Opens Single Model Options Dropdown List
     Click Element  ${SingleModelOptionsButton}
 
-Delete Single Model
+User Clicks Delete Model Option
+    Wait Until Page Contains Element  ${DeleteOption}
     Click Element  ${DeleteOption}
-    Wait Until Page Contains  Notice!
-    Click Element  //*[@id="app"]/div[3]/div/div/div[3]/button
+    Wait Until Page Contains Element  //*[@id="app"]/div[6]/div/div/div[3]/button
+    Click Button  //*[@id="app"]/div[6]/div/div/div[3]/button
+
+Workspace Is Empty
     Wait Until Page Contains  My Models (0)
+
+User Is Logged In And On An Workspace Containing One Model
+    Go To  https://app.labelf.ai/main/387/models/view
+    Wait Until Page Contains  My Models (1)
