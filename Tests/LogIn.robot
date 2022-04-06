@@ -30,7 +30,7 @@ User Navigate To Workspace
     Then Navigate to Workspace 387
 User Creat a Model
     [Documentation]  Testcase for user creat a model on labelf
-    [Tags]  Testcase 2
+    [Tags]  Testcase 3
     Go to  https://app.labelf.ai/main/387/models/view
     Creat a Model
     Select an Existing Dataset
