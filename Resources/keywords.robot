@@ -9,11 +9,21 @@ Begin Web Test
     Call Method    ${chrome_options}    add_argument    --no-sandbox
     Create Webdriver    Chrome    chrome_options=${chrome_options}
 
-    Go To  ${URL}
-
 End Web Test
     Close Browser
 
-Navigate To labelf Web Page
+Input User Credential
     Go To  ${URL}
     Wait Until Page Contains  Don't have an account? Sign up
+    Input Text  xpath:/html/body/div[1]/div/div/main/div/div/div/div/div/div[1]/form/div[1]/div[2]/div[1]/div/input  kimchitest@hotmail.com
+    Input Text  xpath:/html/body/div[1]/div/div/main/div/div/div/div/div/div[1]/form/div[2]/div[2]/div[1]/div/input  Kimchi123
+
+Press Login Button
+    Click Button  //*[@id="app"]/div/main/div/div/div/div/div/div[2]/button[2]
+
+Confirm user logged in
+    Wait Until Page Contains  My Models
+
+Confirm Cookie
+    Sleep  5s
+    Click Button  //*[@id="diffuse-cookie-notice"]/div/div/div/div[2]/button[3]
