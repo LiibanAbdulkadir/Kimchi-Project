@@ -27,3 +27,13 @@ Confirm user logged in
 Confirm Cookie
     Sleep  5s
     Click Button  //*[@id="diffuse-cookie-notice"]/div/div/div/div[2]/button[3]
+
+
+Open Single Model Options Dropdown List
+    Click Element  ${SingleModelOptionsButton}
+
+Delete Single Model
+    Click Element  ${DeleteOption}
+    Wait Until Page Contains  Notice!
+    Click Element  //*[@id="app"]/div[3]/div/div/div[3]/button
+    Wait Until Page Contains  My Models (0)
