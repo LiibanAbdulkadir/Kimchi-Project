@@ -8,38 +8,40 @@ Suite Setup  Begin Web Test
 Suite Teardown  End Web Test
 
 *** Variables ***
+
 ${BROWSER}  chrome
 ${URL}  https://app.labelf.ai/login
 
+
 *** Test Cases ***
 
-User login to Labelf
+User Login To Labelf
     [Documentation]  Testcase for user login to labelf
     [Tags]  Testcase 1
-    Given Input user credential
+    Given Input User Credential
           Confirm Cookie
-    When Press login button
-    Then Confirm user logged in
+    When Press Login Button
+    Then Confirm User Logged In
 
 User Navigate To Workspace
     [Documentation]  Testcase for user navigate to Workspace
     [Tags]  Testcase 2
-    Given Confirm user logged in
-    When Open top burger drop down menu
-    Then Navigate to Workspace 387
+    Given Confirm User Logged In
+    When Open Top Burger Drop Down Menu
+    Then Navigate To Workspace 387
+
 User Creat a Model
     [Documentation]  Testcase for user creat a model on labelf
     [Tags]  Testcase 3
     Go to  https://app.labelf.ai/main/387/models/view
-    Creat a Model
-    Select an Existing Dataset
-    Set Name and Description For Model
-    Verify your Model Exist
+    Creat A Model
+    Select An Existing Dataset
+    Set Name And Description For Model
+    Verify Your Model Exist
 
 Delete Single Model
-    [Documentation]  Testcase for deleting a model, to be used after creating a model. Doesn't work with more than 1 model on workspace.
+    [Documentation]  Deletes single model, only to be used on workspace with only 1 model.
     [Tags]  Testcase 4
-
     Given User Is Logged In And On An Workspace Containing One Model
     When User Opens Single Model Options Dropdown List
     And User Clicks Delete Model Option
