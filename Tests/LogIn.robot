@@ -30,14 +30,14 @@ User Navigate To Workspace
     When Open Top Burger Drop Down Menu
     Then Navigate To Workspace 387
 
-User Creat a Model
+Create a Model
     [Documentation]  Testcase for user creat a model on labelf
     [Tags]  Testcase 3
-    Go to  https://app.labelf.ai/main/387/models/view
-    Creat A Model
-    Select An Existing Dataset
-    Set Name And Description For Model
-    Verify Your Model Exist
+    Given User Is Logged In And On An Empty Workspace
+    When User Clicks Button "New Model" And To Create A New Model From Scratch
+    And Select An Existing Dataset
+    And Set A Name And Description For Model
+    Then Model Is Created On Workspace
 
 Delete Single Model
     [Documentation]  Deletes single model, only to be used on workspace with only 1 model.

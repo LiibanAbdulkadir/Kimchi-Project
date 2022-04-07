@@ -33,7 +33,7 @@ Begin Web Test
     Call Method    ${chrome_options}    add_argument    --start-maximized
     Create Webdriver    Chrome    chrome_options=${chrome_options}
 
-    #Set Window Size  ${1920}  ${1280}
+    #Maximize Browser Window  # Set for video capture of test suite
     #Set Selenium speed  0.5  # Set for video capture of test suite
 
 End Web Test
@@ -55,7 +55,7 @@ Confirm Cookie
     Sleep  1s
     Click Button  ${ConfirmCookieButton}
 
-Creat A Model
+User Clicks Button "New Model" And To Create A New Model From Scratch
      Wait Until Page Contains Element  ${NewModelButton}
      Click Element   ${NewModelButton}
      Wait Until Page Contains  Add a model
@@ -73,14 +73,14 @@ Select An Existing Dataset
      Sleep  0.4  # To allow time for page animation
      Click Element  ${ContinueColumnButton}
 
-Set Name And Description For Model
-     Press Keys  ${InputNameTextField}  ${EMPTY}
+Set A Name And Description For Model
+     Press Keys  ${InputNameTextField}  CTRL+A+DELETE
      Input Text  ${InputNameTextField}   ${ModelName}
      Input Text   ${InputDescriptiontextField}  ${ModelDescription}
      Click Button  ${CreateModelButton}
      Wait Until Page Contains  My Models
 
-Verify Your Model Exist
+Model Is Created On Workspace
      Page Should Contain   ${ModelName}
 
 Open Top Burger Drop Down Menu
@@ -108,3 +108,7 @@ Workspace Is Empty
 User Is Logged In And On An Workspace Containing One Model
     Go To  https://app.labelf.ai/main/387/models/view
     Wait Until Page Contains  My Models (1)
+
+User Is Logged In And On An Empty Workspace
+    Go To  https://app.labelf.ai/main/387/models/view
+    Wait Until Page Contains  My Models (0)
