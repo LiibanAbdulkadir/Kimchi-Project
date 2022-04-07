@@ -30,9 +30,10 @@ Begin Web Test
     Call Method    ${chrome_options}    add_argument    --headless  # Comment away to capture video
     Call Method    ${chrome_options}    add_argument    --disable-gpu
     Call Method    ${chrome_options}    add_argument    --no-sandbox
+    Call Method    ${chrome_options}    add_argument    --start-maximized
     Create Webdriver    Chrome    chrome_options=${chrome_options}
 
-    Set Window Size  ${1920}  ${1280}
+    #Set Window Size  ${1920}  ${1280}
     #Set Selenium speed  0.5  # Set for video capture of test suite
 
 End Web Test
