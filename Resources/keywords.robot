@@ -9,7 +9,7 @@ ${ConfirmCookieButton}  //*[@id="diffuse-cookie-notice"]/div/div/div/div[2]/butt
 ${TopBurgerDropDownMenu}  //*[@class="v-btn v-btn--flat v-btn--large theme--light"]
 ${NewModelButton}   //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a
 ${ContinueButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[1]/div/div/div[2]/button
-${DataSelectButton}   //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/div[2]/button
+${DataSelectButton}   //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[3]/div/div[3]/div/div/div[2]/button
 ${ChooseExistingDataSetButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/div[2]/button
 ${ContinueColumnButton}   //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[2]/button
 ${ScrollTillContinueColumnButton}   //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[2]
@@ -32,7 +32,7 @@ Begin Web Test
     Call Method    ${chrome_options}    add_argument    --no-sandbox
     Create Webdriver    Chrome    chrome_options=${chrome_options}
 
-    Maximize Browser Window
+    Set Window Size  ${1920}  ${1280}
     #Set Selenium speed  0.5  # Set for video capture of test suite
 
 End Web Test
@@ -55,7 +55,7 @@ Confirm Cookie
     Click Button  ${ConfirmCookieButton}
 
 Creat A Model
-     Wait Until Page Contains  Models
+     Wait Until Page Contains Element  ${NewModelButton}
      Click Element   ${NewModelButton}
      Wait Until Page Contains  Add a model
      Click Button  ${ContinueButton}
@@ -63,13 +63,17 @@ Creat A Model
 
 Select An Existing Dataset
      Scroll Element Into View   ${DataSelectButton}
-     Click Button   ${DataSelectButton}
+     Sleep  0.2
+     Click Element   ${DataSelectButton}
      Wait Until Page Contains  Please click on the column
-     Scroll Element Into View  ${ScrollTillContinueColumnButton}
-     Click Button  ${ContinueColumnButton}
+     #Scroll Element Into View  ${ContinueColumnButton}
+
+     Wait Until Page Contains Element  ${ContinueColumnButton}
+     Sleep  0.4  # To allow time for page animation
+     Click Element  ${ContinueColumnButton}
 
 Set Name And Description For Model
-     Press Keys  ${InputNameTextField}  CTRL+A+DELETE
+     Press Keys  ${InputNameTextField}  ${EMPTY}
      Input Text  ${InputNameTextField}   ${ModelName}
      Input Text   ${InputDescriptiontextField}  ${ModelDescription}
      Click Button  ${CreateModelButton}
@@ -84,6 +88,7 @@ Open Top Burger Drop Down Menu
 
 Navigate to Workspace 387
     Wait Until Page Contains Element  //*[@href="/main/387/models/view"]
+    Wait until Page Contains  Team Kimchi
     Click Element  //*[@href="/main/387/models/view"]
     Wait Until Location Is  https://app.labelf.ai/main/387/models/view
 
