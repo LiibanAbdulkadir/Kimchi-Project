@@ -27,10 +27,13 @@ Begin Web Test
     ${chrome_options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
     Call Method    ${chrome_options}    add_argument    test-type
     Call Method    ${chrome_options}    add_argument    --disable-extensions
-    Call Method    ${chrome_options}    add_argument    --headless
+    Call Method    ${chrome_options}    add_argument    --headless  # Comment away to capture video
     Call Method    ${chrome_options}    add_argument    --disable-gpu
     Call Method    ${chrome_options}    add_argument    --no-sandbox
     Create Webdriver    Chrome    chrome_options=${chrome_options}
+
+    Maximize Browser Window
+    #Set Selenium speed  0.5  # Set for video capture of test suite
 
 End Web Test
     Close Browser
@@ -48,13 +51,11 @@ Confirm User Logged In
     Wait Until Page Contains  My Models
 
 Confirm Cookie
-    Sleep  5s
+    Sleep  1s
     Click Button  ${ConfirmCookieButton}
 
 Creat A Model
-     Sleep  3s
      Wait Until Page Contains  Models
-     Sleep  3s
      Click Element   ${NewModelButton}
      Wait Until Page Contains  Add a model
      Click Button  ${ContinueButton}
@@ -63,7 +64,6 @@ Creat A Model
 Select An Existing Dataset
      Scroll Element Into View   ${DataSelectButton}
      Click Button   ${DataSelectButton}
-     Sleep  3s
      Wait Until Page Contains  Please click on the column
      Scroll Element Into View  ${ScrollTillContinueColumnButton}
      Click Button  ${ContinueColumnButton}
@@ -73,7 +73,6 @@ Set Name And Description For Model
      Input Text  ${InputNameTextField}   ${ModelName}
      Input Text   ${InputDescriptiontextField}  ${ModelDescription}
      Click Button  ${CreateModelButton}
-     Sleep  3s
      Wait Until Page Contains  My Models
 
 Verify Your Model Exist
