@@ -12,7 +12,7 @@ Suite Teardown  End Web Test
 *** Variables ***
 
 ${BROWSER}  chrome
-${URL}  https://app.labelf.ai/login
+
 
 
 *** Test Cases ***

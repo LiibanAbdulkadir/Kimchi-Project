@@ -1,5 +1,12 @@
 *** Variables ***
 
+# URL:s
+${AppLoginSite}  https://app.labelf.ai/login
+${StagLoginSite}  https://stag.labelf.ai/login
+
+${AppWorkspaceModelView}  https://app.labelf.ai/main/387/models/view
+${StagWorkspaceModelView}  https://stag.labelf.ai/main/60/models/view
+
 ${LoginEmailField}  xpath:/html/body/div[1]/div/div/main/div/div/div/div/div/div[1]/form/div[1]/div[2]/div[1]/div/input
 ${LoginPasswordField}  xpath:/html/body/div[1]/div/div/main/div/div/div/div/div/div[1]/form/div[2]/div[2]/div[1]/div/input
 ${Email}  kimchitest@hotmail.com
@@ -9,7 +16,7 @@ ${ConfirmCookieButton}  //*[@id="diffuse-cookie-notice"]/div/div/div/div[2]/butt
 ${TopBurgerDropDownMenu}  //*[@class="v-btn v-btn--flat v-btn--large theme--light"]
 ${NewModelButton}   //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a
 ${ContinueButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[1]/div/div/div[2]/button
-${DataSelectButton}   //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[3]/div/div[3]/div/div/div[2]/button
+${DataSelectButton}   //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[3]/div/div[2]/div/div/div[2]/button
 ${ChooseExistingDataSetButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/div[2]/button
 ${ContinueColumnButton}   //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[2]/button
 ${ScrollTillContinueColumnButton}   //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[2]
