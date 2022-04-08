@@ -2,6 +2,8 @@
 
 Documentation  Testsuite Login
 Resource  ../Resources/keywords.robot
+Resource  ../Resources/variables.robot
+
 Library  SeleniumLibrary
 
 Suite Setup  Begin Web Test
