@@ -33,11 +33,11 @@ User Navigate To Workspace
 User Creat a Model
     [Documentation]  Testcase for user creat a model on labelf
     [Tags]  Testcase 3
-    Go to  https://app.labelf.ai/main/387/models/view
-    Creat A Model
-    Select An Existing Dataset
-    Set Name And Description For Model
-    Verify Your Model Exist
+    Given User Is In Workspace 387
+    When User Creats A Model
+    And User Selects An Existing Dataset
+    And User Sets Name And Description For Model
+    Then Model Is Created On Workspace
 
 Delete Single Model
     [Documentation]  Deletes single model, only to be used on workspace with only 1 model.

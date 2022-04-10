@@ -20,6 +20,7 @@ ${ModelDescription}  This is A Model
 ${CreateModelButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/form/div[2]/button
 ${SingleModelOptionsButton}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[3]/div/button/div/i
 ${DeleteOption}  //*[@class="v-icon icon-menu-danger material-icons theme--light"]
+${Workspace387Link}  https://app.labelf.ai/main/387/models/view
 
 *** Keywords ***
 
@@ -31,6 +32,8 @@ Begin Web Test
     Call Method    ${chrome_options}    add_argument    --disable-gpu
     Call Method    ${chrome_options}    add_argument    --no-sandbox
     Create Webdriver    Chrome    chrome_options=${chrome_options}
+
+    #Set Selenium Speed   0.5
 
 End Web Test
     Close Browser
@@ -51,7 +54,10 @@ Confirm Cookie
     Sleep  5s
     Click Button  ${ConfirmCookieButton}
 
-Creat A Model
+User Is In Workspace 387
+    Wait Until Location Is  ${Workspace387Link}
+
+User Creats A Model
      Sleep  3s
      Wait Until Page Contains  Models
      Sleep  3s
@@ -60,7 +66,7 @@ Creat A Model
      Click Button  ${ContinueButton}
      Wait Until Page Contains  Setup
 
-Select An Existing Dataset
+User Selects An Existing Dataset
      Scroll Element Into View   ${DataSelectButton}
      Click Button   ${DataSelectButton}
      Sleep  3s
@@ -68,7 +74,7 @@ Select An Existing Dataset
      Scroll Element Into View  ${ScrollTillContinueColumnButton}
      Click Button  ${ContinueColumnButton}
 
-Set Name And Description For Model
+User Sets Name And Description For Model
      Press Keys  ${InputNameTextField}  CTRL+A+DELETE
      Input Text  ${InputNameTextField}   ${ModelName}
      Input Text   ${InputDescriptiontextField}  ${ModelDescription}
@@ -76,7 +82,7 @@ Set Name And Description For Model
      Sleep  3s
      Wait Until Page Contains  My Models
 
-Verify Your Model Exist
+Model Is Created On Workspace
      Page Should Contain   ${ModelName}
 
 Open Top Burger Drop Down Menu
