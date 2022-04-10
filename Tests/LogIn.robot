@@ -2,6 +2,8 @@
 
 Documentation  Testsuite Login
 Resource  ../Resources/keywords.robot
+Resource  ../Resources/variables.robot
+
 Library  SeleniumLibrary
 
 Suite Setup  Begin Web Test
@@ -30,13 +32,13 @@ User Navigate To Workspace
     When Open Top Burger Drop Down Menu
     Then Navigate To Workspace 387
 
-User Creat a Model
+Create a Model
     [Documentation]  Testcase for user creat a model on labelf
     [Tags]  Testcase 3
-    Given User Is In Workspace 387
-    When User Creats A Model
-    And User Selects An Existing Dataset
-    And User Sets Name And Description For Model
+    Given User Is Logged In And On An Empty Workspace
+    When User Clicks Button "New Model" And To Create A New Model From Scratch
+    And Select An Existing Dataset
+    And Set A Name And Description For Model
     Then Model Is Created On Workspace
 
 Delete Single Model
