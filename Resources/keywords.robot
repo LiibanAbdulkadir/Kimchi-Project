@@ -52,6 +52,16 @@ Select An Existing Dataset
      Sleep  0.4  # To allow time for page animation
      Click Element  ${ContinueColumnButton}
 
+Select Costumer Service Response as Dataset
+     Scroll Element Into View   ${DataSelectButton2}
+     Sleep  0.2
+     Click Element   ${DataSelectButton2}
+     Wait Until Page Contains  Please click on the column
+
+     Wait Until Page Contains Element  ${ContinueColumnButton}
+     Sleep  0.4  # To allow time for page animation
+     Click Element  ${ContinueColumnButton}
+
 Set A Name And Description For Model
      Press Keys  ${InputNameTextField}  CTRL+A+DELETE
      Input Text  ${InputNameTextField}   ${ModelName}

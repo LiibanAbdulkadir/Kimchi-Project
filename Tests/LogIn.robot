@@ -14,9 +14,7 @@ Suite Teardown  End Web Test
 ${BROWSER}  chrome
 
 
-
 *** Test Cases ***
-
 User Login To Labelf
     [Documentation]  Testcase for user login to labelf
     [Tags]  Testcase 1
@@ -48,3 +46,19 @@ Delete Single Model
     When User Opens Single Model Options Dropdown List
     And User Clicks Delete Model Option
     Then Workspace Is Empty
+
+
+Create A Model For Dataset
+    [Documentation]  Creates a single model for Costumer service response
+    [Tags]  Testcase 5
+    Given User Is Logged In And On An Empty Workspace
+    When User Clicks Button "New Model" And To Create A New Model From Scratch
+    And Select Costumer Service Response as Dataset
+    And Set A Name And Description For Model
+    Then Model Is Created On Workspace
+
+
+
+
+
+
