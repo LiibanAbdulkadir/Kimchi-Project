@@ -66,10 +66,10 @@ Open Top Burger Drop Down Menu
     Click Element  ${TopBurgerDropDownMenu}
 
 Navigate to Workspace 387
-    Wait Until Page Contains Element  //*[@href="/main/387/models/view"]
+    Wait Until Page Contains Element  //*[@href="/main/60/models/view"]
     Wait until Page Contains  Team Kimchi
-    Click Element  //*[@href="/main/387/models/view"]
-    Wait Until Location Is  https://app.labelf.ai/main/387/models/view
+    Click Element  //*[@href="/main/60/models/view"]
+    Wait Until Location Is  https://stag.labelf.ai/main/60/models/view
 
 User Opens Single Model Options Dropdown List
     Click Element  ${SingleModelOptionsButton}
@@ -84,9 +84,9 @@ Workspace Is Empty
     Wait Until Page Contains  My Models (0)
 
 User Is Logged In And On An Workspace Containing One Model
-    Go To  https://app.labelf.ai/main/387/models/view
+    Go To  https://stag.labelf.ai/main/60/models/view
     Wait Until Page Contains  My Models (1)
 
 User Is Logged In And On An Empty Workspace
-    Go To  https://app.labelf.ai/main/387/models/view
+    Go To  https://stag.labelf.ai/main/60/models/view
     Wait Until Page Contains  My Models (0)
