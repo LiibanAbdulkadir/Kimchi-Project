@@ -11,7 +11,7 @@ Begin Web Test
     Call Method    ${chrome_options}    add_argument    --start-maximized
     Create Webdriver    Chrome    chrome_options=${chrome_options}
 
-    #Maximize Browser Window  # Set for video capture of test suite
+    Maximize Browser Window  # Set for video capture of test suite
     #Set Selenium speed  0.5  # Set for video capture of test suite
 
 End Web Test
