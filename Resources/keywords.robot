@@ -35,7 +35,7 @@ Confirm Cookie
 
 User Clicks Button "New Model" And To Create A New Model From Scratch
      Wait Until Page Contains Element  ${NewModelButton}
-     Sleep  0.3git
+     Sleep  0.3
      Click Element   ${NewModelButton}
      Wait Until Page Contains  Add a model
      Click Button  ${ContinueButton}
