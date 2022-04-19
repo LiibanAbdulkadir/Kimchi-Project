@@ -57,6 +57,15 @@ Create A Model For Dataset
     And Set A Name And Description For Model
     Then Model Is Created On Workspace
 
+Adds Two Labels To Model
+    [Documentation]  Adds Two Labels and Verify That They Show Up
+    [Tags]  Testcase 6
+    Given User Is Logged In And On An Workspace Containing One Model
+    When User Clicks Button "Overview" And "Start Training" And "Add a label"
+    And Input Label Name And Click Add label
+    Then Multiple choice Is Provided As Option
+
+
 
 
 
