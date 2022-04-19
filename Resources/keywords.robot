@@ -13,7 +13,7 @@ Begin Web Test
 
     Set Window Size  ${1920}  ${1080}
     #Maximize Browser Window  # Set for video capture of test suite
-    #Set Selenium speed  0.5  # Set for video capture of test suite
+    Set Selenium speed  0.2  # Set to 0.5 for video capture of test suite
 
 End Web Test
     Close Browser
