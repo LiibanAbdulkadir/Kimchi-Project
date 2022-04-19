@@ -77,7 +77,7 @@ Open Top Burger Drop Down Menu
     Wait Until Page Contains Element  ${TopBurgerDropDownMenu}
     Click Element  ${TopBurgerDropDownMenu}
 
-Navigate to Workspace 387
+Navigate to Workspace 60
     Wait Until Page Contains Element  //*[@href="/main/60/models/view"]
     Wait until Page Contains  Team Kimchi
     Click Element  //*[@href="/main/60/models/view"]
