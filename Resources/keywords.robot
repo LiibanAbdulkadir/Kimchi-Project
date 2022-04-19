@@ -18,7 +18,7 @@ End Web Test
     Close Browser
 
 Input User Credential
-    Go To  ${URL}
+    Go To  ${StagLoginSite}
     Wait Until Page Contains  Don't have an account? Sign up
     Input Text    ${LoginEmailField}  ${Email}
     Input Text    ${LoginPasswordField}  ${Password}
@@ -35,6 +35,7 @@ Confirm Cookie
 
 User Clicks Button "New Model" And To Create A New Model From Scratch
      Wait Until Page Contains Element  ${NewModelButton}
+     Sleep  0.3
      Click Element   ${NewModelButton}
      Wait Until Page Contains  Add a model
      Click Button  ${ContinueButton}
@@ -46,6 +47,16 @@ Select An Existing Dataset
      Click Element   ${DataSelectButton}
      Wait Until Page Contains  Please click on the column
      #Scroll Element Into View  ${ContinueColumnButton}
+
+     Wait Until Page Contains Element  ${ContinueColumnButton}
+     Sleep  0.4  # To allow time for page animation
+     Click Element  ${ContinueColumnButton}
+
+Select Costumer Service Response as Dataset
+     Scroll Element Into View   ${DataSelectButton2}
+     Sleep  0.2
+     Click Element   ${DataSelectButton2}
+     Wait Until Page Contains  Please click on the column
 
      Wait Until Page Contains Element  ${ContinueColumnButton}
      Sleep  0.4  # To allow time for page animation
@@ -69,7 +80,7 @@ Navigate to Workspace 387
     Wait Until Page Contains Element  //*[@href="/main/60/models/view"]
     Wait until Page Contains  Team Kimchi
     Click Element  //*[@href="/main/60/models/view"]
-    Wait Until Location Is  https://stag.labelf.ai/main/60/models/view
+    Wait Until Location Is  ${StagWorkspaceModelView}
 
 User Opens Single Model Options Dropdown List
     Click Element  ${SingleModelOptionsButton}
@@ -84,9 +95,37 @@ Workspace Is Empty
     Wait Until Page Contains  My Models (0)
 
 User Is Logged In And On An Workspace Containing One Model
-    Go To  https://stag.labelf.ai/main/60/models/view
+    Go To  ${StagWorkspaceModelView}
     Wait Until Page Contains  My Models (1)
 
+User Clicks Button "Overview" And "Start Training" And "Add a label"
+    Wait Until Page Contains Element  ${OverviewButton}
+    Click Element  ${OverviewButton}
+
+    Wait Until Page Contains Element  ${StartTrainingButton}
+    Click Element  ${StartTrainingButton}
+
+    Wait Until Page Contains  You must add at least two labels before Labelf can start learning!
+    Wait Until Page Contains Element  ${AddALabelButton}
+    Click Element  ${AddALabelButton}
+
+Input Label Name And Click Add label
+    Input Text  //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[1]/div/div/div[1]/div/div/div[1]/div/input  Sport
+    Click Element  ${AddLabelButton}
+    Wait until page contains  You must add at least two labels before Labelf can start learning!
+
+    Click element  xpath://span[contains(text(),'Add a label')]
+
+    Press Keys  //input[contains(@aria-label,'Name*')]  CTRL+A+DELETE
+    Input Text  //input[contains(@aria-label,'Name*')]  Economy
+    Click element  //button[contains(.,'Add label')]
+
+
+Multiple choice Is Provided As Option
+    Wait Until Page Contains Element  //button[contains(.,'Multiple Choice')]
+    Wait Until Page Contains  Multiple Choice
+
+
 User Is Logged In And On An Empty Workspace
-    Go To  https://stag.labelf.ai/main/60/models/view
+    Go To  ${StagWorkspaceModelView}
     Wait Until Page Contains  My Models (0)
