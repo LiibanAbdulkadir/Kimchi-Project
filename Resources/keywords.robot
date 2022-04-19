@@ -11,6 +11,7 @@ Begin Web Test
     Call Method    ${chrome_options}    add_argument    --start-maximized
     Create Webdriver    Chrome    chrome_options=${chrome_options}
 
+    Set Window Size  ${1920}  ${1080}
     #Maximize Browser Window  # Set for video capture of test suite
     #Set Selenium speed  0.5  # Set for video capture of test suite
 
@@ -83,6 +84,7 @@ Navigate to Workspace 387
     Wait Until Location Is  ${StagWorkspaceModelView}
 
 User Opens Single Model Options Dropdown List
+    Wait Until Page Contains Element  ${SingleModelOptionsButton}
     Click Element  ${SingleModelOptionsButton}
 
 User Clicks Delete Model Option
