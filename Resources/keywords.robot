@@ -98,6 +98,34 @@ User Is Logged In And On An Workspace Containing One Model
     Go To  ${StagWorkspaceModelView}
     Wait Until Page Contains  My Models (1)
 
+User Clicks Button "Overview" And "Start Training" And "Add a label"
+    Wait Until Page Contains Element  ${OverviewButton}
+    Click Element  ${OverviewButton}
+
+    Wait Until Page Contains Element  ${StartTrainingButton}
+    Click Element  ${StartTrainingButton}
+
+    Wait Until Page Contains  You must add at least two labels before Labelf can start learning!
+    Wait Until Page Contains Element  ${AddALabelButton}
+    Click Element  ${AddALabelButton}
+
+Input Label Name And Click Add label
+    Input Text  //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[1]/div/div/div[1]/div/div/div[1]/div/input  Sport
+    Click Element  ${AddLabelButton}
+    Wait until page contains  You must add at least two labels before Labelf can start learning!
+
+    Click element  xpath://span[contains(text(),'Add a label')]
+
+    Press Keys  //input[contains(@aria-label,'Name*')]  CTRL+A+DELETE
+    Input Text  //input[contains(@aria-label,'Name*')]  Economy
+    Click element  //button[contains(.,'Add label')]
+
+
+Multiple choice Is Provided As Option
+    Wait Until Page Contains Element  //button[contains(.,'Multiple Choice')]
+    Wait Until Page Contains  Multiple Choice
+
+
 User Is Logged In And On An Empty Workspace
     Go To  ${StagWorkspaceModelView}
     Wait Until Page Contains  My Models (0)
