@@ -3,13 +3,13 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/LiibanAbdulkadir/Kimchi-Project.git'
+                git branch: 'windowsEnvironment', url: 'https://github.com/LiibanAbdulkadir/Kimchi-Project.git'
             }
         }
              stage('Robot Framework System tests with Selenium') {
                     steps {
 
-                        sh 'robot --variable BROWSER:headlesschrome -d Results  Tests'
+                        bat 'robot --variable BROWSER:headlesschrome -d Results  Tests'
                     }
                     post {
                         always {
