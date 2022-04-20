@@ -20,6 +20,10 @@ Begin Web Test
 End Web Test
     Close Browser
 
+End Model Creation Test
+    Delete Single Automated Test Model
+    Close Browser
+
 Input User Credential
     Go To  ${StagLoginSite}
     Wait Until Page Contains  Don't have an account? Sign up
@@ -84,6 +88,12 @@ Navigate to Workspace 60
     Wait until Page Contains  Team Kimchi
     Click Element  //*[@href="/main/60/models/view"]
     Wait Until Location Is  ${StagWorkspaceModelView}
+
+Delete Single Automated Test Model
+    User Is Logged In And On An Workspace Containing One Model
+    User Opens Single Model Options Dropdown List
+    User Clicks Delete Model Option
+    Workspace Is Empty
 
 User Opens Single Model Options Dropdown List
     Wait Until Page Contains Element  ${SingleModelOptionsButton}
