@@ -70,8 +70,9 @@ Select Costumer Service Response as Dataset
      Click Element  ${ContinueColumnButton}
 
 Set A Name And Description For Model
-     Press Keys  ${InputNameTextField}  CTRL+A+DELETE
-     Input Text  ${InputNameTextField}   ${ModelName}
+
+     Press Keys  //input[contains(@aria-label,'Name*')]  CTRL+A+DELETE
+     Input Text  //input[contains(@aria-label,'Name*')]  ${ModelName}
      Input Text   ${InputDescriptiontextField}  ${ModelDescription}
      Click Button  ${CreateModelButton}
      Wait Until Page Contains  My Models
