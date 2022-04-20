@@ -3,6 +3,7 @@
 
 Begin Web Test
     ${chrome_options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
+    call Method    ${chrome_options}    add_argument  --disable-dev-shm-usage
     Call Method    ${chrome_options}    add_argument    test-type
     Call Method    ${chrome_options}    add_argument    --disable-extensions
     Call Method    ${chrome_options}    add_argument    --headless  # Comment away to capture video
