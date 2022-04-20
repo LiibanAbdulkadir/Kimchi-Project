@@ -7,7 +7,7 @@ Resource  ../Resources/variables.robot
 Library  SeleniumLibrary
 
 Suite Setup  Begin Web Test
-Suite Teardown  End Web Test
+Suite Teardown  End Model Creation Test
 
 *** Variables ***
 
@@ -47,13 +47,7 @@ Adds Two Labels To Model
     And Input Label Name And Click Add label
     Then Multiple choice Is Provided As Option
 
-Delete Single Model
-    [Documentation]  Deletes single model, only to be used on workspace with only 1 model.
-    [Tags]  Testcase 4
-    Given User Is Logged In And On An Workspace Containing One Model
-    When User Opens Single Model Options Dropdown List
-    And User Clicks Delete Model Option
-    Then Workspace Is Empty
+
 
 
 

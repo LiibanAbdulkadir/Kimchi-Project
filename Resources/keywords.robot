@@ -15,9 +15,13 @@ Begin Web Test
 
     Set Window Size  ${1920}  ${1080}
     #Maximize Browser Window  # Set for video capture of test suite
-    Set Selenium speed  0.2  # Set to 0.5 for video capture of test suite
+    Set Selenium speed  0.1  # Set to 0.5 for video capture of test suite
 
 End Web Test
+    Close Browser
+
+End Model Creation Test
+    Delete Single Automated Test Model
     Close Browser
 
 Input User Credential
@@ -33,12 +37,12 @@ Confirm User Logged In
     Wait Until Page Contains  My Models
 
 Confirm Cookie
-    Sleep  1s
+    Sleep  0.2
     Click Button  ${ConfirmCookieButton}
 
 User Clicks Button "New Model" And To Create A New Model From Scratch
      Wait Until Page Contains Element  ${NewModelButton}
-     Sleep  0.3
+     Sleep  0.2
      Click Element   ${NewModelButton}
      Wait Until Page Contains  Add a model
      Click Button  ${ContinueButton}
@@ -52,7 +56,7 @@ Select An Existing Dataset
      #Scroll Element Into View  ${ContinueColumnButton}
 
      Wait Until Page Contains Element  ${ContinueColumnButton}
-     Sleep  0.4  # To allow time for page animation
+     Sleep  0.2  # To allow time for page animation
      Click Element  ${ContinueColumnButton}
 
 Select Costumer Service Response as Dataset
@@ -62,7 +66,7 @@ Select Costumer Service Response as Dataset
      Wait Until Page Contains  Please click on the column
 
      Wait Until Page Contains Element  ${ContinueColumnButton}
-     Sleep  0.4  # To allow time for page animation
+     Sleep  0.2  # To allow time for page animation
      Click Element  ${ContinueColumnButton}
 
 Set A Name And Description For Model
@@ -84,6 +88,12 @@ Navigate to Workspace 60
     Wait until Page Contains  Team Kimchi
     Click Element  //*[@href="/main/60/models/view"]
     Wait Until Location Is  ${StagWorkspaceModelView}
+
+Delete Single Automated Test Model
+    User Is Logged In And On An Workspace Containing One Model
+    User Opens Single Model Options Dropdown List
+    User Clicks Delete Model Option
+    Workspace Is Empty
 
 User Opens Single Model Options Dropdown List
     Wait Until Page Contains Element  ${SingleModelOptionsButton}
