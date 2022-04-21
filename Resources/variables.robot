@@ -32,3 +32,5 @@ ${StartTrainingButton}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div
 ${OverviewButton}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div
 ${AddALabelButton}  //*[@id="app"]/div[4]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button/div
 ${AddLabelButton}  //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[2]/button
+${LabelsBarChart}  //*[@id="plotly"]/div[1]/div/svg[1]/g[2]/g
+${LabelsPieChart}  //*[@id="plotly"]

@@ -57,10 +57,20 @@ Train dataset and add third label
     Click Button  //button[contains(.,' Add ')]
     #Sleep  2s
 
-    Go To  https://stag.labelf.ai/main/60/models
+    Go To  https://stag.labelf.ai/main/60/models/view
     Click Element  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div
-    Scroll Element Into View  //*[@id="plotly"]/div[1]/div
-    Page Should Contain  Predicted Label Distribution
+    #Scroll Element Into View  //*[@id="plotly"]/div[1]/div
+    #Page Should Contain  Predicted Label Distribution
+
+Verify MultipleLabels Are Shown In Report
+    Wait Until Page Contains  Overview
+    Scroll Element Into View  //*[contains(text(),'Connected Datasets')]
+    Wait Until Page Contains  Sport
+    Wait Until Page Contains  Economy
+    Scroll Element Into View  //*[contains(text(),'Predicted Label Distribution')]
+    Wait Until Page Contains  Predicted Label Distribution
+    Wait Until Page Contains  Sport
+    Wait Until Page Contains  Economy
 
 
 
