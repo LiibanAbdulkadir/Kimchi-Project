@@ -6,16 +6,16 @@ Begin Web Test
     call Method    ${chrome_options}    add_argument  --disable-dev-shm-usage
     Call Method    ${chrome_options}    add_argument    test-type
     Call Method    ${chrome_options}    add_argument    --disable-extensions
-    Call Method    ${chrome_options}    add_argument    --headless  # Comment away to capture video
+    #Call Method    ${chrome_options}    add_argument    --headless  # Comment away to capture video
     Call Method    ${chrome_options}    add_argument    --disable-gpu
     Call Method    ${chrome_options}    add_argument    --no-sandbox
-    Call Method    ${chrome_options}    add_argument    --start-maximized
+    #Call Method    ${chrome_options}    add_argument    --start-maximized
 
     Create Webdriver    Chrome    chrome_options=${chrome_options}
 
-    Set Window Size  ${1920}  ${1080}
+    Set Window Size  ${1600}  ${1050}
     #Maximize Browser Window  # Set for video capture of test suite
-    Set Selenium speed  0.1  # Set to 0.5 for video capture of test suite
+    Set Selenium speed  0.25  # Set to 0.5 for video capture of test suite
 
 End Web Test
     Close Browser
@@ -110,6 +110,7 @@ Workspace Is Empty
 
 User Is Logged In And On An Workspace Containing One Model
     Go To  ${StagWorkspaceModelView}
+
     Wait Until Page Contains  My Models (1)
 
 User Clicks Button "Overview" And "Start Training" And "Add a label"

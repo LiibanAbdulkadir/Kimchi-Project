@@ -7,7 +7,7 @@ Resource  ../Resources/variables.robot
 Library  SeleniumLibrary
 
 Suite Setup  Begin Web Test
-Suite Teardown  End Model Creation Test
+Suite Teardown  #End Model Creation Test
 
 *** Variables ***
 
@@ -23,12 +23,6 @@ User Login To Labelf
     When Press Login Button
     Then Confirm User Logged In
 
-User Navigate To Workspace
-    [Documentation]  Testcase for user navigate to Workspace
-    [Tags]  Testcase 2
-    Given Confirm User Logged In
-    When Open Top Burger Drop Down Menu
-    Then Navigate To Workspace 60
 
 Create A Model For Dataset
     [Documentation]  Creates a single model for Costumer service response
@@ -46,6 +40,24 @@ Adds Two Labels To Model
     When User Clicks Button "Overview" And "Start Training" And "Add a label"
     And Input Label Name And Click Add label
     Then Multiple choice Is Provided As Option
+
+Train dataset and add third label
+    Click Element  //button[contains(.,'Multiple Choice')]
+    Wait until Page Contains  Lets start by giving Labelf 20 samples
+    Page Should Contain Element  //div[contains(text(),'Sport')]
+    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
+    #  xpath://div[contains(text(),'Sport')]
+    Click Button  //button[contains(.,' Add ')]
+    Wait until Page Contains  Lets start by giving Labelf 19 samples
+    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
+    Click Button  //button[contains(.,' Add ')]
+    Wait until Page Contains  Lets start by giving Labelf 18 samples
+    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
+    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
+    Click Button  //button[contains(.,' Add ')]
+    #Sleep  2s
+    #Click button  //*[@id="app"]/div[8]/div/div[1]/div[1]/div/div/nav/div/a
+    #Click Button  //*[@id="app"]/div[7]/div[1]/nav/div/a[1]
 
 
 
