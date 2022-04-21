@@ -15,7 +15,7 @@ Begin Web Test
 
     Set Window Size  ${1600}  ${1050}
     #Maximize Browser Window  # Set for video capture of test suite
-    Set Selenium speed  0.25  # Set to 0.5 for video capture of test suite
+    Set Selenium speed  0.4  # Set to 0.5 for video capture of test suite
 
 End Web Test
     Close Browser
@@ -102,8 +102,8 @@ User Opens Single Model Options Dropdown List
 User Clicks Delete Model Option
     Wait Until Page Contains Element  ${DeleteOption}
     Click Element  ${DeleteOption}
-    Wait Until Page Contains Element  //*[@id="app"]/div[6]/div/div/div[3]/button
-    Click Button  //*[@id="app"]/div[6]/div/div/div[3]/button
+    Wait Until Page Contains Element  //button[contains(.,'Delete')]
+    Click Button  //button[contains(.,'Delete')]
 
 Workspace Is Empty
     Wait Until Page Contains  My Models (0)

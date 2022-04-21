@@ -7,7 +7,7 @@ Resource  ../Resources/variables.robot
 Library  SeleniumLibrary
 
 Suite Setup  Begin Web Test
-Suite Teardown  #End Model Creation Test
+Suite Teardown  End Model Creation Test
 
 *** Variables ***
 
@@ -56,9 +56,11 @@ Train dataset and add third label
     Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
     Click Button  //button[contains(.,' Add ')]
     #Sleep  2s
-    #Click button  //*[@id="app"]/div[8]/div/div[1]/div[1]/div/div/nav/div/a
-    #Click Button  //*[@id="app"]/div[7]/div[1]/nav/div/a[1]
 
+    Go To  https://stag.labelf.ai/main/60/models
+    Click Element  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div
+    Scroll Element Into View  //*[@id="plotly"]/div[1]/div
+    Page Should Contain  Predicted Label Distribution
 
 
 
