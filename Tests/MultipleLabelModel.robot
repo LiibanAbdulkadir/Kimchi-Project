@@ -46,7 +46,6 @@ Train dataset and add third label
     Wait until Page Contains  Lets start by giving Labelf 20 samples
     Page Should Contain Element  //div[contains(text(),'Sport')]
     Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
-    #  xpath://div[contains(text(),'Sport')]
     Click Button  //button[contains(.,' Add ')]
     Wait until Page Contains  Lets start by giving Labelf 19 samples
     Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
@@ -55,12 +54,10 @@ Train dataset and add third label
     Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
     Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
     Click Button  //button[contains(.,' Add ')]
-    #Sleep  2s
+
 
     Go To  https://stag.labelf.ai/main/60/models/view
     Click Element  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div
-    #Scroll Element Into View  //*[@id="plotly"]/div[1]/div
-    #Page Should Contain  Predicted Label Distribution
 
 Verify MultipleLabels Are Shown In Report
     Wait Until Page Contains  Overview

@@ -6,15 +6,13 @@ Begin Web Test
     call Method    ${chrome_options}    add_argument  --disable-dev-shm-usage
     Call Method    ${chrome_options}    add_argument    test-type
     Call Method    ${chrome_options}    add_argument    --disable-extensions
-    #Call Method    ${chrome_options}    add_argument    --headless  # Comment away to capture video
+    Call Method    ${chrome_options}    add_argument    --headless  # Comment away to capture video
     Call Method    ${chrome_options}    add_argument    --disable-gpu
     Call Method    ${chrome_options}    add_argument    --no-sandbox
-    #Call Method    ${chrome_options}    add_argument    --start-maximized
 
     Create Webdriver    Chrome    chrome_options=${chrome_options}
 
     Set Window Size  ${1600}  ${1050}
-    #Maximize Browser Window  # Set for video capture of test suite
     Set Selenium speed  0.4  # Set to 0.5 for video capture of test suite
 
 End Web Test
@@ -53,8 +51,6 @@ Select An Existing Dataset
      Sleep  0.2
      Click Element   ${DataSelectButton}
      Wait Until Page Contains  Please click on the column
-     #Scroll Element Into View  ${ContinueColumnButton}
-
      Wait Until Page Contains Element  ${ContinueColumnButton}
      Sleep  0.2  # To allow time for page animation
      Click Element  ${ContinueColumnButton}
