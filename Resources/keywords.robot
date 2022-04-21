@@ -6,7 +6,7 @@ Begin Web Test
     call Method    ${chrome_options}    add_argument  --disable-dev-shm-usage
     Call Method    ${chrome_options}    add_argument    test-type
     Call Method    ${chrome_options}    add_argument    --disable-extensions
-    Call Method    ${chrome_options}    add_argument    --headless  # Comment away to capture video
+    #Call Method    ${chrome_options}    add_argument    --headless  # Comment away to capture video
     Call Method    ${chrome_options}    add_argument    --disable-gpu
     Call Method    ${chrome_options}    add_argument    --no-sandbox
     Call Method    ${chrome_options}    add_argument    --start-maximized
@@ -128,7 +128,55 @@ Multiple choice Is Provided As Option
     Wait Until Page Contains Element  //button[contains(.,'Multiple Choice')]
     Wait Until Page Contains  Multiple Choice
 
+Multiple Choice Is Selected
+    Click Element  //button[contains(.,'Multiple Choice')]
+
+Radio Button Is Shown
+    Wait Until Page Contains  Sport
+    Wait Until Page Contains  Economy
 
 User Is Logged In And On An Empty Workspace
     Go To  ${StagWorkspaceModelView}
     Wait Until Page Contains  My Models (0)
+
+Train Model with MultipleLabels
+    Radio Button Is Shown
+    Model Is Trained with LabelOne One Time
+    Model Is Trained with LabelTwo Two Times
+    Model Is Trained with Both Labels One Time
+    Verify MultipleLabels Are Shown In Report
+
+Model Is Trained with LabelOne One Time
+    Wait Until Page Contains  Lets start by giving Labelf 20 samples
+    Click Element  ${FirstRadioRoundButton}
+    Click Element  ${AddTrainButton}
+    Wait Until Page Contains  Lets start by giving Labelf 19 samples
+
+Model Is Trained with LabelTwo Two Times
+    Wait Until Page Contains  Lets start by giving Labelf 19 samples
+    Click Element  ${SecondRadioRoundButton}
+    Click Element  ${AddTrainButton}
+    Wait Until Page Contains  Lets start by giving Labelf 18 samples
+    Wait Until Page Contains  ${SecondRadioFullButton}
+    Click Element  ${SecondRadioFullButton}
+    Click Element  ${AddTrainButton}
+    Wait Until Page Contains  Lets start by giving Labelf 17 samples
+
+Model Is Trained with Both Labels One Time
+    Wait Until Page Contains  Lets start by giving Labelf 17 samples
+    Click Element  ${FirstRadioFullButton}
+    Click Element  ${SecondRadioFullButton}
+    Click Element  ${AddTrainButton}
+    Wait Until Page Contains  Lets start by giving Labelf 16 samples
+    Click Element  ${'X'ExitButton}
+
+Verify MultipleLabels Are Shown In Report
+    Wait Until Page Contains  OVERVIEW
+    Scroll Element Into View  ${LabelsBarChart}
+    Wait Until Page Contains  Sport
+    Wait Until Page Contains  Economy
+    Scroll Element Into View  ${LabelsPieChart}
+    Wait Until Page Contains  Predicted Label Distribution
+    Wait Until Page Contains  Sport
+    Wait Until Page Contains  Economy
+

@@ -32,3 +32,17 @@ ${StartTrainingButton}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div
 ${OverviewButton}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div
 ${AddALabelButton}  //*[@id="app"]/div[4]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button/div
 ${AddLabelButton}  //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[2]/button
+
+${FirstRadioRoundButton}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]/a/div[1]/i
+${SecondRadioRoundButton}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]/a/div[1]/i
+
+${FirstRadioFullButton}  //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]/a
+${SecondRadioFullButton}  //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]/a
+
+${FirstRadioNameButton}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]/a/div[2]/div
+${SecondRadioNameButton}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]/a/div[2]/div
+
+${AddTrainButton}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/button/div/i
+${'X'ExitButton}  //*[@id="app"]/div[8]/div/div[1]/div[1]/div/div/nav/div/a/div/i
+${LabelsBarChart}  //*[@id="plotly"]/div[1]/div
+${LabelsPieChart}  //*[@id="plotly"]/div[1]/div
