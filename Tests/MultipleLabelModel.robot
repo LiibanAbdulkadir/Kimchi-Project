@@ -54,24 +54,30 @@ Verify Radio Button Is Shown
     When Multiple Choice Is Selected
     Then Radio Button Is Shown
 
-Train Model with MultipleLabels
+#Train Model with MultipleLabels
+#    [Documentation]  Train Model with MultipleLabels
+#    [Tags]  Testcase 8
+#    Given Radio Button Is Shown
+#    When Model Is Trained with LabelOne One Time
+#    And Model Is Trained with LabelTwo Two Times
+#    And Model Is Trained with Both Labels One Time
+#    Then Verify MultipleLabels Are Shown In Report
+
+Train dataset and add third label
     [Documentation]  Train Model with MultipleLabels
     [Tags]  Testcase 8
     Given Radio Button Is Shown
-    When Model Is Trained with LabelOne One Time
-    And Model Is Trained with LabelTwo Two Times
-    And Model Is Trained with Both Labels One Time
+    When Model Is Trained with MultipleLables
     Then Verify MultipleLabels Are Shown In Report
 
 
-
-#Delete Single Model
-    #[Documentation]  Deletes single model, only to be used on workspace with only 1 model.
-    #[Tags]  Testcase 4
-    #Given User Is Logged In And On An Workspace Containing One Model
-    #When User Opens Single Model Options Dropdown List
-    #And User Clicks Delete Model Option
-    #Then Workspace Is Empty
+Delete Single Model
+    [Documentation]  Deletes single model, only to be used on workspace with only 1 model.
+    [Tags]  Testcase 4
+    Given User Is Logged In And On An Workspace Containing One Model
+    When User Opens Single Model Options Dropdown List
+    And User Clicks Delete Model Option
+    Then Workspace Is Empty
 
 
 

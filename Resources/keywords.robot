@@ -1,4 +1,3 @@
-
 *** Keywords ***
 
 Begin Web Test
@@ -148,27 +147,16 @@ Train Model with MultipleLabels
 
 Model Is Trained with LabelOne One Time
     Wait Until Page Contains  Lets start by giving Labelf 20 samples
-    Click Element  ${FirstRadioRoundButton}
+    Page Should Contain Element  //div[contains(text(),'Sport')]
+    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
     Click Element  ${AddTrainButton}
     Wait Until Page Contains  Lets start by giving Labelf 19 samples
 
-Model Is Trained with LabelTwo Two Times
+Model Is Trained with LabelTwo One Times
     Wait Until Page Contains  Lets start by giving Labelf 19 samples
-    Click Element  ${SecondRadioRoundButton}
+    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
     Click Element  ${AddTrainButton}
     Wait Until Page Contains  Lets start by giving Labelf 18 samples
-    Wait Until Page Contains  ${SecondRadioFullButton}
-    Click Element  ${SecondRadioFullButton}
-    Click Element  ${AddTrainButton}
-    Wait Until Page Contains  Lets start by giving Labelf 17 samples
-
-Model Is Trained with Both Labels One Time
-    Wait Until Page Contains  Lets start by giving Labelf 17 samples
-    Click Element  ${FirstRadioFullButton}
-    Click Element  ${SecondRadioFullButton}
-    Click Element  ${AddTrainButton}
-    Wait Until Page Contains  Lets start by giving Labelf 16 samples
-    Click Element  ${'X'ExitButton}
 
 Verify MultipleLabels Are Shown In Report
     Wait Until Page Contains  OVERVIEW
@@ -179,4 +167,5 @@ Verify MultipleLabels Are Shown In Report
     Wait Until Page Contains  Predicted Label Distribution
     Wait Until Page Contains  Sport
     Wait Until Page Contains  Economy
+
 

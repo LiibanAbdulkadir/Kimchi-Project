@@ -36,8 +36,8 @@ ${AddLabelButton}  //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div[
 ${FirstRadioRoundButton}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]/a/div[1]/i
 ${SecondRadioRoundButton}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]/a/div[1]/i
 
-${FirstRadioFullButton}  //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]/a
-${SecondRadioFullButton}  //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]/a
+${FirstRadioFullButton}  //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
+${SecondRadioFullButton}  //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
 
 ${FirstRadioNameButton}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]/a/div[2]/div
 ${SecondRadioNameButton}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]/a/div[2]/div
