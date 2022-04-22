@@ -56,7 +56,7 @@ Train dataset and add third label
     Click Button  //button[contains(.,' Add ')]
 
 
-    Go To  https://stag.labelf.ai/main/60/models/view
+    Go To  ${StagWorkspaceModelView}
     Click Element  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div
 
 Verify MultipleLabels Are Shown In Report
