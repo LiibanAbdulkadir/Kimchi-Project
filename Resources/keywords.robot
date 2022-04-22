@@ -147,12 +147,12 @@ User Is Logged In And On An Empty Workspace
     Go To  ${StagWorkspaceModelView}
     Wait Until Page Contains  My Models (0)
 
-Train Model with MultipleLabels
-    Radio Button Is Shown
-    Model Is Trained with LabelOne One Time
-    Model Is Trained with LabelTwo Two Times
-    Model Is Trained with Both Labels One Time
-    Verify MultipleLabels Are Shown In Report
+#Train Model with MultipleLabels
+#    Radio Button Is Shown
+#    Model Is Trained with LabelOne One Time
+#    Model Is Trained with LabelTwo Two Times
+#    Model Is Trained with Both Labels One Time
+#    Verify MultipleLabels Are Shown In Report
 
 Model Is Trained with LabelOne One Time
     Wait Until Page Contains  Lets start by giving Labelf 20 samples
@@ -168,13 +168,32 @@ Model Is Trained with LabelTwo One Times
     Wait Until Page Contains  Lets start by giving Labelf 18 samples
 
 Verify MultipleLabels Are Shown In Report
-    Wait Until Page Contains  OVERVIEW
-    Scroll Element Into View  ${LabelsBarChart}
+    Wait Until Page Contains  Overview
+    Scroll Element Into View  //*[contains(text(),'Connected Datasets')]
     Wait Until Page Contains  Sport
     Wait Until Page Contains  Economy
-    Scroll Element Into View  ${LabelsPieChart}
+    Scroll Element Into View  //*[contains(text(),'Predicted Label Distribution')]
     Wait Until Page Contains  Predicted Label Distribution
     Wait Until Page Contains  Sport
     Wait Until Page Contains  Economy
+
+
+Model Is Trained with MultipleLables
+    #Click Element  //button[contains(.,'Multiple Choice')]
+    Wait until Page Contains  Lets start by giving Labelf 20 samples
+    Page Should Contain Element  //div[contains(text(),'Sport')]
+    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
+    Click Button  //button[contains(.,' Add ')]
+    Wait until Page Contains  Lets start by giving Labelf 19 samples
+    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
+    Click Button  //button[contains(.,' Add ')]
+    Wait until Page Contains  Lets start by giving Labelf 18 samples
+    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
+    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
+    Click Button  //button[contains(.,' Add ')]
+
+
+    Go To  ${StagWorkspaceModelView}
+    Click Element  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div
 
 
