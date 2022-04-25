@@ -28,15 +28,19 @@ Input User Credential
     Input Text    ${LoginEmailField}  ${Email}
     Input Text    ${LoginPasswordField}  ${Password}
 
+Confirm Cookie
+    Sleep  0.2
+    Click Button  ${ConfirmCookieButton}
+
 Press Login Button
     Click Button  ${LoginButton}
 
 Confirm User Logged In
     Wait Until Page Contains  My Models
 
-Confirm Cookie
-    Sleep  0.2
-    Click Button  ${ConfirmCookieButton}
+User Is Logged In And On An Empty Workspace
+    Go To  ${StagWorkspaceModelView}
+    Wait Until Page Contains  My Models (0)
 
 User Clicks Button "New Model" And To Create A New Model From Scratch
      Wait Until Page Contains Element  ${NewModelButton}
@@ -46,14 +50,14 @@ User Clicks Button "New Model" And To Create A New Model From Scratch
      Click Button  ${ContinueButton}
      Wait Until Page Contains  Setup
 
-Select An Existing Dataset
-     Scroll Element Into View   ${DataSelectButton}
-     Sleep  0.2
-     Click Element   ${DataSelectButton}
-     Wait Until Page Contains  Please click on the column
-     Wait Until Page Contains Element  ${ContinueColumnButton}
-     Sleep  0.2  # To allow time for page animation
-     Click Element  ${ContinueColumnButton}
+#Select An Existing Dataset
+#     Scroll Element Into View   ${DataSelectButton}
+#     Sleep  0.2
+#     Click Element   ${DataSelectButton}
+#     Wait Until Page Contains  Please click on the column
+#     Wait Until Page Contains Element  ${ContinueColumnButton}
+#     Sleep  0.2  # To allow time for page animation
+#     Click Element  ${ContinueColumnButton}
 
 Select Costumer Service Response as Dataset
      Scroll Element Into View   ${DataSelectButton2}
@@ -75,21 +79,25 @@ Set A Name And Description For Model
 Model Is Created On Workspace
      Page Should Contain   ${ModelName}
 
-Open Top Burger Drop Down Menu
-    Wait Until Page Contains Element  ${TopBurgerDropDownMenu}
-    Click Element  ${TopBurgerDropDownMenu}
+#Open Top Burger Drop Down Menu
+#    Wait Until Page Contains Element  ${TopBurgerDropDownMenu}
+#    Click Element  ${TopBurgerDropDownMenu}
 
-Navigate to Workspace 60
-    Wait Until Page Contains Element  //*[@href="/main/60/models/view"]
-    Wait until Page Contains  Team Kimchi
-    Click Element  //*[@href="/main/60/models/view"]
-    Wait Until Location Is  ${StagWorkspaceModelView}
+#Navigate to Workspace 60
+#    Wait Until Page Contains Element  //*[@href="/main/60/models/view"]
+#    Wait until Page Contains  Team Kimchi
+#    Click Element  //*[@href="/main/60/models/view"]
+#    Wait Until Location Is  ${StagWorkspaceModelView}
 
 Delete Single Automated Test Model
     User Is Logged In And On An Workspace Containing One Model
     User Opens Single Model Options Dropdown List
     User Clicks Delete Model Option
     Workspace Is Empty
+
+User Is Logged In And On An Workspace Containing One Model
+    Go To  ${StagWorkspaceModelView}
+    Wait Until Page Contains  My Models (1)
 
 User Opens Single Model Options Dropdown List
     Wait Until Page Contains Element  ${SingleModelOptionsButton}
@@ -104,10 +112,8 @@ User Clicks Delete Model Option
 Workspace Is Empty
     Wait Until Page Contains  My Models (0)
 
-User Is Logged In And On An Workspace Containing One Model
-    Go To  ${StagWorkspaceModelView}
 
-    Wait Until Page Contains  My Models (1)
+
 
 User Clicks Button "Overview" And "Start Training" And "Add a label"
     Wait Until Page Contains Element  ${OverviewButton}
@@ -131,8 +137,7 @@ Input Label Name And Click Add label
     Input Text  //input[contains(@aria-label,'Name*')]  Economy
     Click element  //button[contains(.,'Add label')]
 
-
-Multiple choice Is Provided As Option
+Multiple Choice Is Provided As Option
     Wait Until Page Contains Element  //button[contains(.,'Multiple Choice')]
     Wait Until Page Contains  Multiple Choice
 
@@ -143,43 +148,7 @@ Radio Button Is Shown
     Wait Until Page Contains  Sport
     Wait Until Page Contains  Economy
 
-User Is Logged In And On An Empty Workspace
-    Go To  ${StagWorkspaceModelView}
-    Wait Until Page Contains  My Models (0)
-
-#Train Model with MultipleLabels
-#    Radio Button Is Shown
-#    Model Is Trained with LabelOne One Time
-#    Model Is Trained with LabelTwo Two Times
-#    Model Is Trained with Both Labels One Time
-#    Verify MultipleLabels Are Shown In Report
-
-Model Is Trained with LabelOne One Time
-    Wait Until Page Contains  Lets start by giving Labelf 20 samples
-    Page Should Contain Element  //div[contains(text(),'Sport')]
-    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
-    Click Element  ${AddTrainButton}
-    Wait Until Page Contains  Lets start by giving Labelf 19 samples
-
-Model Is Trained with LabelTwo One Times
-    Wait Until Page Contains  Lets start by giving Labelf 19 samples
-    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
-    Click Element  ${AddTrainButton}
-    Wait Until Page Contains  Lets start by giving Labelf 18 samples
-
-Verify MultipleLabels Are Shown In Report
-    Wait Until Page Contains  Overview
-    Scroll Element Into View  //*[contains(text(),'Connected Datasets')]
-    Wait Until Page Contains  Sport
-    Wait Until Page Contains  Economy
-    Scroll Element Into View  //*[contains(text(),'Predicted Label Distribution')]
-    Wait Until Page Contains  Predicted Label Distribution
-    Wait Until Page Contains  Sport
-    Wait Until Page Contains  Economy
-
-
 Model Is Trained with MultipleLables
-    #Click Element  //button[contains(.,'Multiple Choice')]
     Wait until Page Contains  Lets start by giving Labelf 20 samples
     Page Should Contain Element  //div[contains(text(),'Sport')]
     Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
@@ -192,8 +161,15 @@ Model Is Trained with MultipleLables
     Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
     Click Button  //button[contains(.,' Add ')]
 
-
     Go To  ${StagWorkspaceModelView}
     Click Element  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div
 
-
+Verify MultipleLabels Are Shown In Report
+    Wait Until Page Contains  Overview
+    Scroll Element Into View  //*[contains(text(),'Connected Datasets')]
+    Wait Until Page Contains  Sport
+    Wait Until Page Contains  Economy
+    Scroll Element Into View  //*[contains(text(),'Predicted Label Distribution')]
+    Wait Until Page Contains  Predicted Label Distribution
+    Wait Until Page Contains  Sport
+    Wait Until Page Contains  Economy

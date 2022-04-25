@@ -23,7 +23,6 @@ User Login To Labelf
     When Press Login Button
     Then Confirm User Logged In
 
-
 Create A Model For Dataset
     [Documentation]  Creates a single model for Costumer service response
     [Tags]  Testcase 5
@@ -39,23 +38,14 @@ Adds Two Labels To Model
     Given User Is Logged In And On An Workspace Containing One Model
     When User Clicks Button "Overview" And "Start Training" And "Add a label"
     And Input Label Name And Click Add label
-    Then Multiple choice Is Provided As Option
+    Then Multiple Choice Is Provided As Option
 
 Verify Radio Button Is Shown
     [Documentation]  Verify Radio Button Is Shown When Multiple Choice Is Clicked
     [Tags]  Testcase 7
-    Given Multiple choice Is Provided As Option
+    Given Multiple Choice Is Provided As Option
     When Multiple Choice Is Selected
     Then Radio Button Is Shown
-
-#Train Model with MultipleLabels
-#    [Documentation]  Train Model with MultipleLabels
-#    [Tags]  Testcase 8
-#    Given Radio Button Is Shown
-#    When Model Is Trained with LabelOne One Time
-#    And Model Is Trained with LabelTwo Two Times
-#    And Model Is Trained with Both Labels One Time
-#    Then Verify MultipleLabels Are Shown In Report
 
 Train dataset and add third label
     [Documentation]  Train Model with MultipleLabels
