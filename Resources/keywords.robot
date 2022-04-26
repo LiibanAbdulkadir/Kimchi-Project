@@ -169,7 +169,7 @@ Verify MultipleLabels Are Shown In Report
     Scroll Element Into View  //*[contains(text(),'Connected Datasets')]
     Wait Until Page Contains  Sport
     Wait Until Page Contains  Economy
-    Scroll Element Into View  //*[contains(text(),'Predicted Label Distribution')]
-    Wait Until Page Contains  Predicted Label Distribution
+    Execute Javascript  window.scrollTo(0,1800)
+    Wait Until Element Is Visible   ${LabelsPieChart}
     Wait Until Page Contains  Sport
     Wait Until Page Contains  Economy
