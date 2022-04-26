@@ -161,6 +161,7 @@ Model Is Trained with MultipleLables
     Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
     Click Button  //button[contains(.,' Add ')]
     Wait until Page Contains  Lets start by giving Labelf 18 samples
+    Page Should Contain Element  //div[contains(text(),'Economy')]
     Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
     Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
     Click Button  //button[contains(.,' Add ')]
