@@ -38,6 +38,7 @@ Create a Model
     And Select An Existing Dataset
     And Set A Name And Description For Model
     Then Model Is Created On Workspace
+    And Model Description Is Presented In Model Overview
 
 Delete Single Model
     [Documentation]  Deletes single model, only to be used on workspace with only 1 model.

@@ -23,7 +23,6 @@ User Login To Labelf
     When Press Login Button
     Then Confirm User Logged In
 
-
 Create A Model For Dataset
     [Documentation]  Creates a single model for Costumer service response
     [Tags]  Testcase 5
@@ -39,36 +38,23 @@ Adds Two Labels To Model
     Given User Is Logged In And On An Workspace Containing One Model
     When User Clicks Button "Overview" And "Start Training" And "Add a label"
     And Input Label Name And Click Add label
-    Then Multiple choice Is Provided As Option
+    Then Multiple Choice Is Provided As Option
+
+Verify Radio Button Is Shown
+    [Documentation]  Verify Radio Button Is Shown When Multiple Choice Is Clicked
+    [Tags]  Testcase 7
+    Given Multiple Choice Is Provided As Option
+    When Multiple Choice Is Selected
+    Then Radio Button Is Shown
 
 Train dataset and add third label
-    Click Element  //button[contains(.,'Multiple Choice')]
-    Wait until Page Contains  Lets start by giving Labelf 20 samples
-    Page Should Contain Element  //div[contains(text(),'Sport')]
-    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
-    Click Button  //button[contains(.,' Add ')]
-    Wait until Page Contains  Lets start by giving Labelf 19 samples
-    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
-    Click Button  //button[contains(.,' Add ')]
-    Wait until Page Contains  Lets start by giving Labelf 18 samples
-    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
-    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
-    Click Button  //button[contains(.,' Add ')]
+    [Documentation]  Train Model with MultipleLabels
+    [Tags]  Testcase 8
+    Given Radio Button Is Shown
+    When Model Is Trained with MultipleLables
+    Then Verify MultipleLabels Are Shown In Report
 
 
-    Go To  ${StagWorkspaceModelView}
-    Click Element  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div
-
-Verify MultipleLabels Are Shown In Report
-    Wait Until Page Contains  Overview
-    Scroll Element Into View  //*[contains(text(),'Connected Datasets')]
-    Wait Until Page Contains  Sport
-    Wait Until Page Contains  Economy
-    Execute Javascript  window.scrollTo(0,1800)
-    Wait Until Element Is Visible   ${labelsPpieChart}
-
-    Wait Until Page Contains  Sport
-    Wait Until Page Contains  Economy
 
 
 
