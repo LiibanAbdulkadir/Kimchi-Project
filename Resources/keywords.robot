@@ -6,14 +6,14 @@ Begin Web Test
     call Method    ${chrome_options}    add_argument  --disable-dev-shm-usage
     Call Method    ${chrome_options}    add_argument    test-type
     Call Method    ${chrome_options}    add_argument    --disable-extensions
-    #Call Method    ${chrome_options}    add_argument    --headless  # Comment away to capture video
+    Call Method    ${chrome_options}    add_argument    --headless  # Comment away to capture video
     Call Method    ${chrome_options}    add_argument    --disable-gpu
     Call Method    ${chrome_options}    add_argument    --no-sandbox
 
     Create Webdriver    Chrome    chrome_options=${chrome_options}
 
     Set Window Size  ${1600}  ${1050}
-    Set Selenium speed  0.4  # Set to 0.5 for video capture of test suite
+    Set Selenium speed  0.2  # Set to 0.5 for video capture of test suite
 
 End Web Test
     Close Browser
@@ -50,14 +50,14 @@ User Clicks Button "New Model" And To Create A New Model From Scratch
      Click Button  ${ContinueButton}
      Wait Until Page Contains  Setup
 
-#Select An Existing Dataset
-#     Scroll Element Into View   ${DataSelectButton}
-#     Sleep  0.2
-#     Click Element   ${DataSelectButton}
-#     Wait Until Page Contains  Please click on the column
-#     Wait Until Page Contains Element  ${ContinueColumnButton}
-#     Sleep  0.2  # To allow time for page animation
-#     Click Element  ${ContinueColumnButton}
+Select An Existing Dataset
+     Scroll Element Into View   ${DataSelectButton}
+     Sleep  0.2
+     Click Element   ${DataSelectButton}
+     Wait Until Page Contains  Please click on the column
+     Wait Until Page Contains Element  ${ContinueColumnButton}
+     Sleep  0.2  # To allow time for page animation
+     Click Element  ${ContinueColumnButton}
 
 Select Costumer Service Response as Dataset
      Scroll Element Into View   ${DataSelectButton2}
@@ -79,15 +79,18 @@ Set A Name And Description For Model
 Model Is Created On Workspace
      Page Should Contain   ${ModelName}
 
-#Open Top Burger Drop Down Menu
-#    Wait Until Page Contains Element  ${TopBurgerDropDownMenu}
-#    Click Element  ${TopBurgerDropDownMenu}
+Model Description Is Presented In Model Overview
+    Page Should Contain  ${ModelDescription}
 
-#Navigate to Workspace 60
-#    Wait Until Page Contains Element  //*[@href="/main/60/models/view"]
-#    Wait until Page Contains  Team Kimchi
-#    Click Element  //*[@href="/main/60/models/view"]
-#    Wait Until Location Is  ${StagWorkspaceModelView}
+Open Top Burger Drop Down Menu
+    Wait Until Page Contains Element  ${TopBurgerDropDownMenu}
+    Click Element  ${TopBurgerDropDownMenu}
+
+Navigate to Workspace 60
+    Wait Until Page Contains Element  //*[@href="/main/60/models/view"]
+    Wait until Page Contains  Team Kimchi
+    Click Element  //*[@href="/main/60/models/view"]
+    Wait Until Location Is  ${StagWorkspaceModelView}
 
 Delete Single Automated Test Model
     User Is Logged In And On An Workspace Containing One Model
@@ -154,6 +157,7 @@ Model Is Trained with MultipleLables
     Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
     Click Button  //button[contains(.,' Add ')]
     Wait until Page Contains  Lets start by giving Labelf 19 samples
+    Page Should Contain Element  //div[contains(text(),'Economy')]
     Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
     Click Button  //button[contains(.,' Add ')]
     Wait until Page Contains  Lets start by giving Labelf 18 samples
