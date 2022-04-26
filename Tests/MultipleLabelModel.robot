@@ -53,7 +53,7 @@ Train dataset and add third label
     Given Radio Buttons For Created Labels Is Shown
     When Model Is Trained with MultipleLables
     And A Third Label Is Added To Model
-    #Then  All Labels Are Possible To Select
+    Then All Labels Are Possible To Select
 
 Verify Model Overview Reports
     [Documentation]  Verify training of model shows properly on model overview page

@@ -13,7 +13,7 @@ Begin Web Test
     Create Webdriver    Chrome    chrome_options=${chrome_options}
 
     Set Window Size  ${1600}  ${1050}
-    Set Selenium speed  0.4  # Set to 0.5 for video capture of test suite
+    Set Selenium speed  0.3  # Set to 0.5 for video capture of test suite
 
 End Web Test
     Close Browser
@@ -172,7 +172,16 @@ A Third Label Is Added To Model
     Input Text  //input[contains(@aria-label,'Name*')]  Fake News
     Click element  //button[contains(.,'Add label')]
 
-#All Labels Are Possible To Select
+All Labels Are Possible To Select
+    Wait until Page Contains  Lets start by giving Labelf 17 samples
+    Page should contain Element  //div[contains(text(),'Fake News')]
+    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
+    Page should contain Element  //div[contains(text(),'Sport')]
+    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[3]
+    Page should contain Element   //div[contains(text(),'Economy')]
+    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
+    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[3]
+    Click Button  //button[contains(.,' Add ')]
 
 
 Verify MultipleLabels Are Shown In Report
