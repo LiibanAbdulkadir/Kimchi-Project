@@ -47,7 +47,7 @@ User Clicks Button "New Model" And To Create A New Model From Scratch
      Sleep  0.2
      Click Element   ${NewModelButton}
      Wait Until Page Contains  Add a model
-     Click Button  ${ContinueButton}
+     Click Button  ${ContinueCreateModelButton}
      Wait Until Page Contains  Setup
 
 Select An Existing Dataset
@@ -83,8 +83,8 @@ Model Description Is Presented In Model Overview
     Page Should Contain  ${ModelDescription}
 
 Open Top Burger Drop Down Menu
-    Wait Until Page Contains Element  ${TopBurgerDropDownMenu}
-    Click Element  ${TopBurgerDropDownMenu}
+    Wait Until Page Contains Element  ${WorkspaceDropdownMenu}
+    Click Element  ${WorkspaceDropdownMenu}
 
 Navigate to Workspace 60
     Wait Until Page Contains Element  //*[@href="/main/60/models/view"]
@@ -114,8 +114,6 @@ User Clicks Delete Model Option
 
 Workspace Is Empty
     Wait Until Page Contains  My Models (0)
-
-
 
 
 User Clicks Button "Overview" And "Start Training" And "Add a label"
