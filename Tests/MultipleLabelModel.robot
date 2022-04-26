@@ -45,14 +45,20 @@ Verify Radio Button Is Shown
     [Tags]  Testcase 7
     Given Multiple Choice Is Provided As Option
     When Multiple Choice Is Selected
-    Then Radio Button Is Shown
+    Then Radio Buttons For Created Labels Is Shown
 
 Train dataset and add third label
     [Documentation]  Train Model with MultipleLabels
     [Tags]  Testcase 8
-    Given Radio Button Is Shown
+    Given Radio Buttons For Created Labels Is Shown
     When Model Is Trained with MultipleLables
-    Then Verify MultipleLabels Are Shown In Report
+    And A Third Label Is Added To Model
+    #Then  All Labels Are Possible To Select
+
+Verify Model Overview Reports
+    [Documentation]  Verify training of model shows properly on model overview page
+    [Tags]  Testcase 9
+    Verify MultipleLabels Are Shown In Report
 
 
 

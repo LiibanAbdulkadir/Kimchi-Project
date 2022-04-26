@@ -6,14 +6,14 @@ Begin Web Test
     call Method    ${chrome_options}    add_argument  --disable-dev-shm-usage
     Call Method    ${chrome_options}    add_argument    test-type
     Call Method    ${chrome_options}    add_argument    --disable-extensions
-    Call Method    ${chrome_options}    add_argument    --headless  # Comment away to capture video
+    #Call Method    ${chrome_options}    add_argument    --headless  # Comment away to capture video
     Call Method    ${chrome_options}    add_argument    --disable-gpu
     Call Method    ${chrome_options}    add_argument    --no-sandbox
 
     Create Webdriver    Chrome    chrome_options=${chrome_options}
 
     Set Window Size  ${1600}  ${1050}
-    Set Selenium speed  0.2  # Set to 0.5 for video capture of test suite
+    Set Selenium speed  0.4  # Set to 0.5 for video capture of test suite
 
 End Web Test
     Close Browser
@@ -147,7 +147,7 @@ Multiple Choice Is Provided As Option
 Multiple Choice Is Selected
     Click Element  //button[contains(.,'Multiple Choice')]
 
-Radio Button Is Shown
+Radio Buttons For Created Labels Is Shown
     Wait Until Page Contains  Sport
     Wait Until Page Contains  Economy
 
@@ -166,10 +166,18 @@ Model Is Trained with MultipleLables
     Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
     Click Button  //button[contains(.,' Add ')]
 
-    Go To  ${StagWorkspaceModelView}
-    Click Element  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div
+A Third Label Is Added To Model
+    Click element  xpath://span[contains(text(),'Add a label')]
+    Press Keys  //input[contains(@aria-label,'Name*')]  CTRL+A+DELETE
+    Input Text  //input[contains(@aria-label,'Name*')]  Fake News
+    Click element  //button[contains(.,'Add label')]
+
+#All Labels Are Possible To Select
+
 
 Verify MultipleLabels Are Shown In Report
+    Go To  ${StagWorkspaceModelView}
+    Click Element  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div
     Wait Until Page Contains  Overview
     Scroll Element Into View  //*[contains(text(),'Connected Datasets')]
     Wait Until Page Contains  Sport
