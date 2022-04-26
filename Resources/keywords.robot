@@ -1,5 +1,5 @@
-
 *** Keywords ***
+
 
 Begin Web Test
     ${chrome_options}=  Evaluate  sys.modules['selenium.webdriver'].ChromeOptions()  sys, selenium.webdriver
@@ -13,7 +13,7 @@ Begin Web Test
     Create Webdriver    Chrome    chrome_options=${chrome_options}
 
     Set Window Size  ${1600}  ${1050}
-    Set Selenium speed  0.4  # Set to 0.5 for video capture of test suite
+    Set Selenium speed  0.2  # Set to 0.5 for video capture of test suite
 
 End Web Test
     Close Browser
@@ -28,15 +28,19 @@ Input User Credential
     Input Text    ${LoginEmailField}  ${Email}
     Input Text    ${LoginPasswordField}  ${Password}
 
+Confirm Cookie
+    Sleep  0.2
+    Click Button  ${ConfirmCookieButton}
+
 Press Login Button
     Click Button  ${LoginButton}
 
 Confirm User Logged In
     Wait Until Page Contains  My Models
 
-Confirm Cookie
-    Sleep  0.2
-    Click Button  ${ConfirmCookieButton}
+User Is Logged In And On An Empty Workspace
+    Go To  ${StagWorkspaceModelView}
+    Wait Until Page Contains  My Models (0)
 
 User Clicks Button "New Model" And To Create A New Model From Scratch
      Wait Until Page Contains Element  ${NewModelButton}
@@ -75,6 +79,9 @@ Set A Name And Description For Model
 Model Is Created On Workspace
      Page Should Contain   ${ModelName}
 
+Model Description Is Presented In Model Overview
+    Page Should Contain  ${ModelDescription}
+
 Open Top Burger Drop Down Menu
     Wait Until Page Contains Element  ${TopBurgerDropDownMenu}
     Click Element  ${TopBurgerDropDownMenu}
@@ -91,6 +98,10 @@ Delete Single Automated Test Model
     User Clicks Delete Model Option
     Workspace Is Empty
 
+User Is Logged In And On An Workspace Containing One Model
+    Go To  ${StagWorkspaceModelView}
+    Wait Until Page Contains  My Models (1)
+
 User Opens Single Model Options Dropdown List
     Wait Until Page Contains Element  ${SingleModelOptionsButton}
     Click Element  ${SingleModelOptionsButton}
@@ -104,10 +115,8 @@ User Clicks Delete Model Option
 Workspace Is Empty
     Wait Until Page Contains  My Models (0)
 
-User Is Logged In And On An Workspace Containing One Model
-    Go To  ${StagWorkspaceModelView}
 
-    Wait Until Page Contains  My Models (1)
+
 
 User Clicks Button "Overview" And "Start Training" And "Add a label"
     Wait Until Page Contains Element  ${OverviewButton}
@@ -131,12 +140,41 @@ Input Label Name And Click Add label
     Input Text  //input[contains(@aria-label,'Name*')]  Economy
     Click element  //button[contains(.,'Add label')]
 
-
-Multiple choice Is Provided As Option
+Multiple Choice Is Provided As Option
     Wait Until Page Contains Element  //button[contains(.,'Multiple Choice')]
     Wait Until Page Contains  Multiple Choice
 
+Multiple Choice Is Selected
+    Click Element  //button[contains(.,'Multiple Choice')]
 
-User Is Logged In And On An Empty Workspace
+Radio Button Is Shown
+    Wait Until Page Contains  Sport
+    Wait Until Page Contains  Economy
+
+Model Is Trained with MultipleLables
+    Wait until Page Contains  Lets start by giving Labelf 20 samples
+    Page Should Contain Element  //div[contains(text(),'Sport')]
+    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
+    Click Button  //button[contains(.,' Add ')]
+    Wait until Page Contains  Lets start by giving Labelf 19 samples
+    Page Should Contain Element  //div[contains(text(),'Economy')]
+    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
+    Click Button  //button[contains(.,' Add ')]
+    Wait until Page Contains  Lets start by giving Labelf 18 samples
+    Page Should Contain Element  //div[contains(text(),'Economy')]
+    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
+    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
+    Click Button  //button[contains(.,' Add ')]
+
     Go To  ${StagWorkspaceModelView}
-    Wait Until Page Contains  My Models (0)
+    Click Element  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div
+
+Verify MultipleLabels Are Shown In Report
+    Wait Until Page Contains  Overview
+    Scroll Element Into View  //*[contains(text(),'Connected Datasets')]
+    Wait Until Page Contains  Sport
+    Wait Until Page Contains  Economy
+    Execute Javascript  window.scrollTo(0,1800)
+    Wait Until Element Is Visible   ${LabelsPieChart}
+    Wait Until Page Contains  Sport
+    Wait Until Page Contains  Economy
