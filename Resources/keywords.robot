@@ -13,7 +13,7 @@ Begin Web Test
     Create Webdriver    Chrome    chrome_options=${chrome_options}
 
     Set Window Size  ${1600}  ${1050}
-    Set Selenium speed  0.2  # Set to 0.5 for video capture of test suite
+    Set Selenium speed  0.3  # Set to 0.5 for video capture of test suite
 
 End Web Test
     Close Browser
@@ -147,7 +147,7 @@ Multiple Choice Is Provided As Option
 Multiple Choice Is Selected
     Click Element  //button[contains(.,'Multiple Choice')]
 
-Radio Button Is Shown
+Radio Buttons For Created Labels Is Shown
     Wait Until Page Contains  Sport
     Wait Until Page Contains  Economy
 
@@ -166,15 +166,41 @@ Model Is Trained with MultipleLables
     Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
     Click Button  //button[contains(.,' Add ')]
 
-    Go To  ${StagWorkspaceModelView}
-    Click Element  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div
+A Third Label Is Added To Model
+    Click element  xpath://span[contains(text(),'Add a label')]
+    Press Keys  //input[contains(@aria-label,'Name*')]  CTRL+A+DELETE
+    Input Text  //input[contains(@aria-label,'Name*')]  Fake News
+    Click element  //button[contains(.,'Add label')]
 
-Verify MultipleLabels Are Shown In Report
+All Labels Are Possible To Select
+    Wait until Page Contains  Lets start by giving Labelf 17 samples
+    Page should contain Element  //div[contains(text(),'Fake News')]
+    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
+    Page should contain Element  //div[contains(text(),'Sport')]
+    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[3]
+    Page should contain Element   //div[contains(text(),'Economy')]
+    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
+    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[3]
+    Click Button  //button[contains(.,' Add ')]
+
+That Model Is Trained With Three Labels
+    Wait until Page Contains  Lets start by giving Labelf 16 samples
+
+User Navigate To Model Overview
+    Go To   ${StagWorkspaceModelView}
+    Click Element  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div
     Wait Until Page Contains  Overview
+
+
+The Trained Labels Are Shown In Report
     Scroll Element Into View  //*[contains(text(),'Connected Datasets')]
     Wait Until Page Contains  Sport
     Wait Until Page Contains  Economy
+    Wait Until Page Contains  Fake News
     Execute Javascript  window.scrollTo(0,1800)
     Wait Until Element Is Visible   ${LabelsPieChart}
-    Wait Until Page Contains  Sport
-    Wait Until Page Contains  Economy
+    Wait Until Element contains  ${SliceEconomy}  50%
+    Wait Until Element contains  ${SliceSport}  33.3%
+    Wait Until Element contains  ${SliceFakeNews}  16.7%
+
+
