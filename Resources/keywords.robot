@@ -196,6 +196,7 @@ The Trained Labels Are Shown In Report
     Scroll Element Into View  //*[contains(text(),'Connected Datasets')]
     Wait Until Page Contains  Sport
     Wait Until Page Contains  Economy
+    Wait Until Page Contains  Fake News
     Execute Javascript  window.scrollTo(0,1800)
     Wait Until Element Is Visible   ${LabelsPieChart}
     Wait Until Element contains  ${SliceEconomy}  50%
