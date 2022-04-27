@@ -51,23 +51,23 @@ User Clicks Button "New Model" And To Create A New Model From Scratch
      Wait Until Page Contains  Setup
 
 Select An Existing Dataset
-     Scroll Element Into View   ${DataSelectButton}
+     Scroll Element Into View   ${DataSelectCustomerSupportButton}
      Sleep  0.2
-     Click Element   ${DataSelectButton}
+     Click Element   ${DataSelectCustomerSupportButton}
      Wait Until Page Contains  Please click on the column
-     Wait Until Page Contains Element  ${ContinueColumnButton}
+     Wait Until Page Contains Element  ${ContinueWithSelectedDatasetColumnButton}
      Sleep  0.2  # To allow time for page animation
-     Click Element  ${ContinueColumnButton}
+     Click Element  ${ContinueWithSelectedDatasetColumnButton}
 
 Select Costumer Service Response as Dataset
-     Scroll Element Into View   ${DataSelectButton2}
+     Scroll Element Into View   ${DataSelectCustomerResponseButton}
      Sleep  0.2
-     Click Element   ${DataSelectButton2}
+     Click Element   ${DataSelectCustomerResponseButton}
      Wait Until Page Contains  Please click on the column
 
-     Wait Until Page Contains Element  ${ContinueColumnButton}
+     Wait Until Page Contains Element  ${ContinueWithSelectedDatasetColumnButton}
      Sleep  0.2  # To allow time for page animation
-     Click Element  ${ContinueColumnButton}
+     Click Element  ${ContinueWithSelectedDatasetColumnButton}
 
 Set A Name And Description For Model
      Press Keys  ${InputNameTextField}  CTRL+A+DELETE
@@ -109,8 +109,8 @@ User Opens Single Model Options Dropdown List
 User Clicks Delete Model Option
     Wait Until Page Contains Element  ${DeleteOption}
     Click Element  ${DeleteOption}
-    Wait Until Page Contains Element  //button[contains(.,'Delete')]
-    Click Button  //button[contains(.,'Delete')]
+    Wait Until Page Contains Element  ${DeleteButton}
+    Click Button  ${DeleteButton}
 
 Workspace Is Empty
     Wait Until Page Contains  My Models (0)
@@ -128,22 +128,22 @@ User Clicks Button "Overview" And "Start Training" And "Add a label"
     Click Element  ${AddALabelButton}
 
 Input Label Name And Click Add label
-    Input Text  //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[1]/div/div/div[1]/div/div/div[1]/div/input  Sport
+    Input Text  ${InputNameTextField}  Sport
     Click Element  ${AddLabelButton}
     Wait until page contains  You must add at least two labels before Labelf can start learning!
 
     Click element  xpath://span[contains(text(),'Add a label')]
 
-    Press Keys  //input[contains(@aria-label,'Name*')]  CTRL+A+DELETE
-    Input Text  //input[contains(@aria-label,'Name*')]  Economy
+    Press Keys  ${InputNameTextField}  CTRL+A+DELETE
+    Input Text  ${InputNameTextField}  Economy
     Click element  //button[contains(.,'Add label')]
 
 Multiple Choice Is Provided As Option
-    Wait Until Page Contains Element  //button[contains(.,'Multiple Choice')]
+    Wait Until Page Contains Element  ${MultipleChoiceButton}
     Wait Until Page Contains  Multiple Choice
 
 Multiple Choice Is Selected
-    Click Element  //button[contains(.,'Multiple Choice')]
+    Click Element  ${MultipleChoiceButton}
 
 Radio Button Is Shown
     Wait Until Page Contains  Sport
@@ -152,20 +152,21 @@ Radio Button Is Shown
 Model Is Trained with MultipleLables
     Wait until Page Contains  Lets start by giving Labelf 20 samples
     Page Should Contain Element  //div[contains(text(),'Sport')]
-    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
-    Click Button  //button[contains(.,' Add ')]
+    Click Element  ${SportRadioButton}
+    Click Button  ${AddButton}
     Wait until Page Contains  Lets start by giving Labelf 19 samples
     Page Should Contain Element  //div[contains(text(),'Economy')]
-    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
-    Click Button  //button[contains(.,' Add ')]
+    Click Element  ${EconomyRadioButton}
+    Click Button  ${AddButton}
     Wait until Page Contains  Lets start by giving Labelf 18 samples
     Page Should Contain Element  //div[contains(text(),'Economy')]
-    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
-    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
-    Click Button  //button[contains(.,' Add ')]
+    Page Should Contain Element  //div[contains(text(),'Sport')]
+    Click Element  ${SportRadioButton}
+    Click Element  ${EconomyRadioButton}
+    Click Button  ${AddButton}
 
     Go To  ${StagWorkspaceModelView}
-    Click Element  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div
+    Click Element  ${OverviewButton}
 
 Verify MultipleLabels Are Shown In Report
     Wait Until Page Contains  Overview

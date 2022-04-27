@@ -32,24 +32,20 @@ ${StartTrainingButton}  //*[contains(text(),'model_training')]
 
 
 #Dataset
-${DataSelectButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[3]/div/div[2]/div/div/div[2]/button/div
-${DataSelectButton2}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/div[2]/button/div
-${ChooseExistingDataSetButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/div[2]/button
-${ContinueColumnButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[2]/button
-${ScrollTillContinueColumnButton}   //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[2]
+${DataSelectCustomerSupportButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[3]/div/div[2]/div/div/div[2]/button/div
+${DataSelectCustomerResponseButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/div[2]/button/div
+${ContinueWithSelectedDatasetColumnButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[2]/button
 
 
 #Label Training
 ${AddALabelButton}  //*[@id="app"]/div[4]/div/div[1]/div[4]/div/div/span/div/div/div[2]/div/div/button/div
 ${AddLabelButton}  //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div[2]/form/div[2]/button
-${FirstRadioRoundButton}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]/a/div[1]/i
-${SecondRadioRoundButton}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]/a/div[1]/i
-${FirstRadioFullButton}  //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
-${SecondRadioFullButton}  //*[@id="app"]/div[5]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
-${FirstRadioNameButton}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]/a/div[2]/div
-${SecondRadioNameButton}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]/a/div[2]/div
-${AddTrainButton}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/button/div/i
-${'X'ExitButton}  //*[@id="app"]/div[8]/div/div[1]/div[1]/div/div/nav/div/a/div/i
-${LabelsBarChart}  //*[@id="plotly"]/div[1]/div
 ${LabelsPieChart}  //*[@id="plotly"]/div[1]/div
+${MultipleChoiceButton}  //button[contains(.,'Multiple Choice')]
+${AddButton}  //button[contains(.,' Add ')]
+${SportRadioButton}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
+${EconomyRadioButton}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
 
+
+#GeneralButtons
+${DeleteButton}  //button[contains(.,'Delete')]
