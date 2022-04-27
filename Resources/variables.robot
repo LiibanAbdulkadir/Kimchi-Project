@@ -3,6 +3,12 @@
 # URL:s
 ${AppLoginSite}  https://app.labelf.ai/login
 ${StagLoginSite}  https://stag.labelf.ai/login
+${SliceSport}  css:div#plotly > div.plot-container.plotly > div > svg:nth-child(1) > g.pielayer > g > g:nth-child(2) > g
+${SliceFakeNews}  css:div#plotly > div.plot-container.plotly > div > svg:nth-child(1) > g.pielayer > g > g:nth-child(3) > g
+
+${SliceEconomy}   css:div#plotly > div.plot-container.plotly > div > svg:nth-child(1) > g.pielayer > g > g:nth-child(1) > g
+
+
 
 ${AppWorkspaceModelView}  https://app.labelf.ai/main/387/models/view
 ${StagWorkspaceModelView}  https://stag.labelf.ai/main/60/models/view

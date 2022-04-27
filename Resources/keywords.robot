@@ -183,15 +183,23 @@ All Labels Are Possible To Select
     Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[3]
     Click Button  //button[contains(.,' Add ')]
 
+That Model Is Trained With Three Labels
+    Wait until Page Contains  Lets start by giving Labelf 16 samples
 
-Verify MultipleLabels Are Shown In Report
-    Go To  ${StagWorkspaceModelView}
+User Navigate To Model Overview
+    Go To   ${StagWorkspaceModelView}
     Click Element  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div
     Wait Until Page Contains  Overview
+
+
+The Trained Labels Are Shown In Report
     Scroll Element Into View  //*[contains(text(),'Connected Datasets')]
     Wait Until Page Contains  Sport
     Wait Until Page Contains  Economy
     Execute Javascript  window.scrollTo(0,1800)
     Wait Until Element Is Visible   ${LabelsPieChart}
-    Wait Until Page Contains  Sport
-    Wait Until Page Contains  Economy
+    Wait Until Element contains  ${SliceEconomy}  50%
+    Wait Until Element contains  ${SliceSport}  33.3%
+    Wait Until Element contains  ${SliceFakeNews}  16.7%
+
+

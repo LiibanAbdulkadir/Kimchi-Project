@@ -4,6 +4,7 @@ Documentation  Testsuite Login
 Resource  ../Resources/keywords.robot
 Resource  ../Resources/variables.robot
 
+
 Library  SeleniumLibrary
 
 Suite Setup  Begin Web Test
@@ -58,7 +59,11 @@ Train dataset and add third label
 Verify Model Overview Reports
     [Documentation]  Verify training of model shows properly on model overview page
     [Tags]  Testcase 9
-    Verify MultipleLabels Are Shown In Report
+    Given That Model Is Trained With Three Labels
+    When User Navigate To Model Overview
+    Then The Trained Labels Are Shown In Report
+
+
 
 
 
