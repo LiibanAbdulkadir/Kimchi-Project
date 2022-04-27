@@ -152,23 +152,20 @@ Radio Buttons For Created Labels Is Shown
 Model Is Trained with MultipleLables
     Wait until Page Contains  Lets start by giving Labelf 20 samples
     Page Should Contain Element  //div[contains(text(),'Sport')]
-    Click Element  ${SportRadioButton}
+    Click Element  ${SecondRadioButton}
     Click Button  ${AddButton}
     Wait until Page Contains  Lets start by giving Labelf 19 samples
     Page Should Contain Element  //div[contains(text(),'Economy')]
-    Click Element  ${EconomyRadioButton}
+    Click Element  ${FirstRadioButton}
     Click Button  ${AddButton}
     Wait until Page Contains  Lets start by giving Labelf 18 samples
     Page Should Contain Element  //div[contains(text(),'Economy')]
     Page Should Contain Element  //div[contains(text(),'Sport')]
-    Click Element  ${SportRadioButton}
-    Click Element  ${EconomyRadioButton}
+    Click Element  ${FirstRadioButton}
+    Click Element  ${SecondRadioButton}
     Click Button  ${AddButton}
 
-    Go To  ${StagWorkspaceModelView}
-    Click Element  ${OverviewButton}
 
-Verify MultipleLabels Are Shown In Report
 A Third Label Is Added To Model
     Click element  xpath://span[contains(text(),'Add a label')]
     Press Keys  //input[contains(@aria-label,'Name*')]  CTRL+A+DELETE
@@ -178,20 +175,20 @@ A Third Label Is Added To Model
 All Labels Are Possible To Select
     Wait until Page Contains  Lets start by giving Labelf 17 samples
     Page should contain Element  //div[contains(text(),'Fake News')]
-    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
+    Click Element  ${SecondRadioButton}
     Page should contain Element  //div[contains(text(),'Sport')]
-    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[3]
+    Click Element  ${ThirdRadioButton}
     Page should contain Element   //div[contains(text(),'Economy')]
-    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
-    Click Element  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[3]
-    Click Button  //button[contains(.,' Add ')]
+    Click Element  ${FirstRadioButton}
+    Click Element  ${ThirdRadioButton}
+    Click Button  ${AddButton}
 
 That Model Is Trained With Three Labels
     Wait until Page Contains  Lets start by giving Labelf 16 samples
 
 User Navigate To Model Overview
     Go To   ${StagWorkspaceModelView}
-    Click Element  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div
+    Click Element  ${OverviewButton}
     Wait Until Page Contains  Overview
 
 
