@@ -100,7 +100,6 @@ Model Is Trained with MultipleLables
     Click Element  ${SecondRadioButton}
     Click Button  ${AddButton}
 
-
 A Third Label Is Added To Model
     Click element  xpath://span[contains(text(),'Add a label')]
     Press Keys  //input[contains(@aria-label,'Name*')]  CTRL+A+DELETE
@@ -109,12 +108,12 @@ A Third Label Is Added To Model
 
 All Labels Are Possible To Select
     Wait until Page Contains  Lets start by giving Labelf 17 samples
+    Page should contain Element  //div[contains(text(),'Economy')]
     Page should contain Element  //div[contains(text(),'Fake News')]
-    Click Element  ${SecondRadioButton}
     Page should contain Element  //div[contains(text(),'Sport')]
-    Click Element  ${ThirdRadioButton}
-    Page should contain Element   //div[contains(text(),'Economy')]
     Click Element  ${FirstRadioButton}
+    Click Element  ${SecondRadioButton}
+    Click Element  ${ThirdRadioButton}
     Click Element  ${ThirdRadioButton}
     Click Button  ${AddButton}
 
@@ -125,7 +124,6 @@ User Navigate To Model Overview
     Go To   ${StagWorkspaceModelView}
     Click Element  ${OverviewButton}
     Wait Until Page Contains  Overview
-
 
 The Trained Labels Are Shown In Report
     Scroll Element Into View  //*[contains(text(),'Connected Datasets')]
