@@ -1,6 +1,7 @@
 *** Settings ***
 
 Documentation  Testsuite Login
+Resource  ../Resources/modelKeyword.robot
 Resource  ../Resources/keywords.robot
 Resource  ../Resources/variables.robot
 
