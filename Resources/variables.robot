@@ -5,9 +5,6 @@ ${StagLoginSite}  https://stag.labelf.ai/login
 ${WorkspaceDropdownMenu}  //*[@class="v-btn v-btn--flat v-btn--large theme--light"]
 
 
-
-
-
 # Login
 ${LoginEmailField}  xpath:/html/body/div[1]/div/div/main/div/div/div/div/div/div[1]/form/div[1]/div[2]/div[1]/div/input
 ${Email}  kimchitest@hotmail.com
@@ -24,7 +21,6 @@ ${OverviewButton}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/
 ${NewModelButton}   //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a
 ${DeleteOption}  //*[@class="v-icon icon-menu-danger material-icons theme--light"]
 
-
 # Model
 ${ContinueCreateModelButton}  //button[contains(.,'Continue')]
 ${InputNameTextField}  //input[contains(@aria-label,'Name*')]
@@ -40,6 +36,7 @@ ${SliceSport}  css:div#plotly > div.plot-container.plotly > div > svg:nth-child(
 #Dataset
 ${DataSelectCustomerSupportButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[3]/div/div[2]/div/div/div[2]/button/div
 ${DataSelectCustomerResponseButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/div[2]/button/div
+${DataSelectPartlyPreLabledButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div/div[2]/button
 ${ContinueWithSelectedDatasetColumnButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[2]/button
 
 
@@ -52,10 +49,11 @@ ${AddButton}  //button[contains(.,' Add ')]
 ${FirstRadioButton}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[1]
 ${SecondRadioButton}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[2]
 ${ThirdRadioButton}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/div/div/div[2]/div/div[3]
+${LabelSwitchButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/nav/div/div[3]/div[2]/div[1]/div
+${MultiplLabelsSwitchButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/div/nav/div/div[3]/div/div/div[1]/div
 
 #GeneralButtons
 ${DeleteButton}  //button[contains(.,'Delete')]
-${labelSwitchButton}    //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/nav/div/div[3]/div[2]/div[1]/div
-${multiplLabelsSwitchButton}  //*[contains(@aria-label,'One text can have multiple labels (separate with | )')]
+
 
 

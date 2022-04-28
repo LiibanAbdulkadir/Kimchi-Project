@@ -13,9 +13,9 @@ Suite Teardown  End Model Creation Test
 
 *** Test Cases ***
 
-slider One text can contain multiple labels is presented
-    [Documentation]  slider One text can contain multiple labels is presented
-    [Tags]  Testcase
-    Given User Has selected Bring your own labels
-    When user clicks continue
-    Then the slider One text can contain multiple labels is presented
+Slider One Text Can Contain Multiple Labels Is Presented
+    [Documentation]  Slider One text can contain multiple labels is presented
+    [Tags]  Testcase 1
+    Given User Has Selected Bring Your Own Labels
+    When User Clicks Continue
+    Then The Slider One Text Can Contain Multiple Labels Is Presented
