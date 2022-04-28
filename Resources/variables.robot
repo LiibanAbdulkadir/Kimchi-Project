@@ -55,5 +55,7 @@ ${ThirdRadioButton}  //*[@id="app"]/div[8]/div/div[1]/div[4]/div/div/span/div/di
 
 #GeneralButtons
 ${DeleteButton}  //button[contains(.,'Delete')]
+${labelSwitchButton}    //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/nav/div/div[3]/div[2]/div[1]/div
+${multiplLabelsSwitchButton}  //*[contains(@aria-label,'One text can have multiple labels (separate with | )')]
 
 

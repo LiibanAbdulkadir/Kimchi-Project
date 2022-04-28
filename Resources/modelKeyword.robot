@@ -135,3 +135,29 @@ The Trained Labels Are Shown In Report
     Wait Until Element contains  ${SliceEconomy}  50%
     Wait Until Element contains  ${SliceSport}  33.3%
     Wait Until Element contains  ${SliceFakeNews}  16.7%
+
+User Has selected Bring your own labels
+  Input User Credential
+  Confirm Cookie
+  Press Login Button
+  Confirm User Logged In
+  Go To  ${StagWorkspaceModelView}
+  User Clicks Button "New Model" And To Create A New Model From Scratch
+  Click Element  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div/div[2]/button
+   Wait Until Page Contains  Please click on the column
+   Wait Until Element Is Visible  ${labelSwitchButton}  #Train directly on labels from an existing column #“Bring your own labels”
+   Click Element  ${labelSwitchButton}
+
+user clicks continue
+     Wait Until Page Contains Element  ${ContinueWithSelectedDatasetColumnButton}
+     Sleep  0.2  # To allow time for page animation
+     Click Element  ${ContinueWithSelectedDatasetColumnButton}
+     Wait Until Page Contains  Please click on the column containing the labels
+
+
+
+
+the slider One text can contain multiple labels is presented
+
+         Wait Until Page Contains  ${multiplLabelsSwitchButton}
+
