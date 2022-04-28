@@ -153,6 +153,9 @@ User Clicks Continue
      Click Element  ${ContinueWithSelectedDatasetColumnButton}
      Wait Until Page Contains  Please click on the column containing the labels
 
-The Slider One Text Can Contain Multiple Labels Is Presented
-         Wait Until Page Contains Element  ${MultiplLabelsSwitchButton}
+The Slider "One Text Can Contain Multiple Labels" Is Presented
+     Wait Until Page Contains Element  ${MultiplLabelsSwitchButton}
 
+Verify "One Text Can Have Multiple Labels" Is Enabled When Clicked
+     Click Element  ${MultiplLabelsSwitchButton}
+     Element Should Be Enabled  ${MultiplLabelsSwitchButton}
