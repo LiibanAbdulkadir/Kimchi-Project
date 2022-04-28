@@ -42,10 +42,6 @@ User Is Logged In And On An Empty Workspace
     Go To  ${StagWorkspaceModelView}
     Wait Until Page Contains  My Models (0)
 
-
-
-
-
 Delete Single Automated Test Model
     User Is Logged In And On An Workspace Containing One Model
     User Opens Single Model Options Dropdown List
