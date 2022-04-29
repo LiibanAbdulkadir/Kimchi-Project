@@ -135,3 +135,27 @@ The Trained Labels Are Shown In Report
     Wait Until Element contains  ${SliceEconomy}  50%
     Wait Until Element contains  ${SliceSport}  33.3%
     Wait Until Element contains  ${SliceFakeNews}  16.7%
+
+User Has Selected Bring Your Own Labels
+    Input User Credential
+    Confirm Cookie
+    Press Login Button
+    Confirm User Logged In
+    Go To  ${StagWorkspaceModelView}
+    User Clicks Button "New Model" And To Create A New Model From Scratch
+    Click Element  ${DataSelectPartlyPreLabledButton}
+    Wait Until Page Contains  Please click on the column
+    Click Element  ${LabelSwitchButton}
+
+User Clicks Continue
+     Wait Until Page Contains Element  ${ContinueWithSelectedDatasetColumnButton}
+     Sleep  0.2  # To allow time for page animation
+     Click Element  ${ContinueWithSelectedDatasetColumnButton}
+     Wait Until Page Contains  Please click on the column containing the labels
+
+The Slider "One Text Can Contain Multiple Labels" Is Presented
+     Wait Until Page Contains Element  ${MultiplLabelsSwitchButton}
+
+Verify "One Text Can Have Multiple Labels" Is Enabled When Clicked
+     Click Element  ${MultiplLabelsSwitchButton}
+     Element Should Be Enabled  ${MultiplLabelsSwitchButton}
