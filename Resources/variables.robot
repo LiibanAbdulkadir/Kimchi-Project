@@ -54,6 +54,7 @@ ${MultiplLabelsSwitchButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/di
 
 #GeneralButtons
 ${DeleteButton}  //button[contains(.,'Delete')]
+${ContinueButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/div/div[3]/button
 
 
 

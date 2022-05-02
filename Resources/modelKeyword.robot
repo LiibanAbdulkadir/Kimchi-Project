@@ -159,3 +159,9 @@ The Slider "One Text Can Contain Multiple Labels" Is Presented
 Verify "One Text Can Have Multiple Labels" Is Enabled When Clicked
      Click Element  ${MultiplLabelsSwitchButton}
      Element Should Be Enabled  ${MultiplLabelsSwitchButton}
+
+Verify that all labels from original dataset are shown in Model overview
+     Wait Until Page Contains  Negative
+     Wait Until Page Contains  Positive
+     Wait Until Page Contains  Neutral
+     Wait Until Page Contains  N/A
