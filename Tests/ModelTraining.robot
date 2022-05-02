@@ -9,7 +9,7 @@ Resource  ../Resources/variables.robot
 Library  SeleniumLibrary
 
 Suite Setup  Begin Web Test
-Suite Teardown  End Web Test
+Suite Teardown  End Model Creation Test
 
 
 *** Test Cases ***

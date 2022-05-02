@@ -132,9 +132,9 @@ The Trained Labels Are Shown In Report
     Wait Until Page Contains  Fake News
     Execute Javascript  window.scrollTo(0,1800)
     Wait Until Element Is Visible   ${LabelsPieChart}
-    Wait Until Element contains  ${SliceEconomy}  50%
-    Wait Until Element contains  ${SliceSport}  33.3%
-    Wait Until Element contains  ${SliceFakeNews}  16.7%
+    Wait Until Element contains  ${SliceEconomy}  50
+    Wait Until Element contains  ${SliceSport}  33.3
+    Wait Until Element contains  ${SliceFakeNews}  16.7
 
 User Has Selected Bring Your Own Labels
     Input User Credential
