@@ -8,6 +8,7 @@ Resource  ../Resources/VerificationKeyword.robot
 
 
 Library  SeleniumLibrary
+Library  String
 
 Suite Setup  Begin Web Test
 Suite Teardown  End Web Test

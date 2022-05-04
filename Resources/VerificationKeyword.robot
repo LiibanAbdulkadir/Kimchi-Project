@@ -6,7 +6,17 @@ User Inputs Test Sentence into "Test Your Model"
 
 
 Verify Confidence Is Higher Than 100% When Sum
-    ${for_value1}=  Get Element Attribute  //*[contains(@role,'progressbar')]  aria-valuenow
-    Log To Console  ${for_value1}
+    ${for_value}=  Get Element count  //div[contains(@class,'v-toolbar__title body-2')]
+    log to console  ${for_value}
+
+    #${ISUM} =    set variable  0
+    FOR  ${i}  IN RANGE  4  ${for_value}+4
+        ${h2text}=  get text  xpath:(//div[contains(@class,'v-toolbar__title body-2')])[${i}]
+        #${number only}     Evaluate    "${h2text}".split(" ")[:]
+        ${number only}  Remove String  ${h2text}
+
+        #${ISUM} =    Evaluate    int(${ISUM}) + int(${number only})
+        log to console  ${number only}
+    END
 
 
