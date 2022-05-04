@@ -32,8 +32,6 @@ Verify that one confidence level at least 50% when multiple lables are classifie
     When User Inputs New Test Sentence With Multiple Labels into "Test Your Model"
     Then Retrive Confidence Level And Verify that Confidence Is Higher Than 50% When Sum
 
-
-
 Verify that the categorization confidence levels matches the label of the original datapoint
     [Documentation]  This testcase Verify that the categorization confidence levels matches the label of the original datapoint
     [Tags]  Testcase 3

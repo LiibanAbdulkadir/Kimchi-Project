@@ -60,21 +60,40 @@ Retrive Confidence Level And Verify that Confidence Is Higher Than 50% When Sum
 
 
 Confidence levels matches the label of the original datapoint
-    ${ElementCount}=  Get Element count  //div[contains(@class,'v-toolbar__content')]
-    log to console  ${ElementCount}
+    #${ElementCount}=  Get Element count  //div[contains(@class,'v-toolbar__content')]
+    #log to console  ${ElementCount}
 
-    FOR  ${i}  IN RANGE  10  ${ElementCount}
-        ${confidenceLevel}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[${i}]
+    ${confidenceRank1}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[10]  #Rank1
+    ${confidenceRank1}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[10]  #Two variables share the same xpath position need to run the code twice to Pick the right one!
+    ${confidenceRank2}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[11]  #Rank2
+    ${confidenceRank3}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[12]  #Rank3
+    ${confidenceRank4}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[13]  #Rank4
+    Log to console  .
+    Log to console  ${confidenceRank4}
+    Log to console  ---------
+    Log to console  ${confidenceRank3}
+    Log to console  ---------
+    Log to console  ${confidenceRank2}
+    Log to console  ---------
+    Log to console  ${confidenceRank1}
+    Log to console  ---------
+
+    IF  "Negative" in """${confidenceRank1}"""
+        Log to console  Negative is the label with the highest confidence level
+        Log to console  ---------
+
+   ELSE IF  "Positive" in """${confidenceRank1}"""
+        Log to console  Positive is the label with the highest confidence level
+        Log to console  ---------
+
+   ELSE IF  "Neutral" in """${confidenceRank1}"""
+        Log to console  Neutral is the label with the highest confidence level
+        Log to console  ---------
+
+   ELSE IF  "N/A" in """${confidenceRank1}"""
+        Log to console  N/A is the label with the highest confidence level
+        Log to console  ---------
+    ELSE
+        Log to console  ERROR DOES NOT MATCH ANY CONFIDENCELEVEL
+        FAIL
     END
-    ${OnlyString}=    Remove String    ${confidenceLevel}    Confidence:
-    ${OnlyString}=    Remove String    ${OnlyString}    75%
-    Log to console  ${OnlyString}
-
-    ${ControlString} =  Set Variable  Negative
-
-
-    IF    ${OnlyString} == ${ControlString}
-    Log to console  The Value is not the same as the dataset
-    Fail
-    END
-
