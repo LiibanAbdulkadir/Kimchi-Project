@@ -22,4 +22,4 @@ Verify that Sum Of confidence levels is higher than 100%
     Given User Navigate/Login To App and Navigates To Workspace 387
           User Navigate To Model Overview App
     When User Inputs Test Sentence into "Test Your Model"
-    Then Verify Confidence Is Higher Than 100% When Sum
+    Then Retrive Confidence Level And Verify Confidence Is Higher Than 100% When Sum
