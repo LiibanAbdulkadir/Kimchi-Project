@@ -8,6 +8,10 @@ User Inputs New Test Sentence With Multiple Labels into "Test Your Model"
     Input Text  ${InputDescriptionTextField}  The service is bad, but the food is great
     Click Button  ${SubmitButton}
 
+User Inputs confidence levels Sentence matches the label of the original datapoint into "Test Your Model"
+    Input Text  ${InputDescriptionTextField}  Do not greet you
+    Click Button  ${SubmitButton}
+
 Retrive Confidence Level And Verify Confidence Is Higher Than 100% When Sum
     ${ElementCount}=  Get Element count  //div[contains(@class,'v-toolbar__title body-2')]
     #log to console  ${ElementCount}
@@ -53,3 +57,24 @@ Retrive Confidence Level And Verify that Confidence Is Higher Than 50% When Sum
     Log to console  The precentage is below 50
     Fail
     END
+
+
+Confidence levels matches the label of the original datapoint
+    ${ElementCount}=  Get Element count  //div[contains(@class,'v-toolbar__content')]
+    log to console  ${ElementCount}
+
+    FOR  ${i}  IN RANGE  10  ${ElementCount}
+        ${confidenceLevel}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[${i}]
+    END
+    ${OnlyString}=    Remove String    ${confidenceLevel}    Confidence:
+    ${OnlyString}=    Remove String    ${OnlyString}    75%
+    Log to console  ${OnlyString}
+
+    ${ControlString} =  Set Variable  Negative
+
+
+    IF    ${OnlyString} == ${ControlString}
+    Log to console  The Value is not the same as the dataset
+    Fail
+    END
+
