@@ -2,6 +2,7 @@
 
 # URL:s Menu
 ${StagLoginSite}  https://stag.labelf.ai/login
+${AppLoginSite}  https://app.labelf.ai/login
 ${WorkspaceDropdownMenu}  //*[@class="v-btn v-btn--flat v-btn--large theme--light"]
 
 
@@ -16,6 +17,7 @@ ${ConfirmCookieButton}  //*[@id="diffuse-cookie-notice"]/div/div/div/div[2]/butt
 
 # Workspace
 ${StagWorkspaceModelView}  https://stag.labelf.ai/main/60/models/view
+${AppWorkspaceModelView}  https://app.labelf.ai/main/387/models/view
 ${SingleModelOptionsButton}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[3]/div/button/div/i
 ${OverviewButton}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div
 ${NewModelButton}   //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a
@@ -28,7 +30,7 @@ ${ModelName}   Data Model
 ${InputDescriptionTextField}  //*[@name="input-7-1"]
 ${ModelDescription}  This is A Model
 ${CreateModelButton}  //button[contains(.,'Create Model')]
-${StartTrainingButton}  //*[contains(text(),'model_training')]
+${StartTrainingButton}  //*[contains(text(),' Start training ')]
 ${SliceFakeNews}  css:div#plotly > div.plot-container.plotly > div > svg:nth-child(1) > g.pielayer > g > g:nth-child(3) > g
 ${SliceEconomy}   css:div#plotly > div.plot-container.plotly > div > svg:nth-child(1) > g.pielayer > g > g:nth-child(1) > g
 ${SliceSport}  css:div#plotly > div.plot-container.plotly > div > svg:nth-child(1) > g.pielayer > g > g:nth-child(2) > g
@@ -55,6 +57,6 @@ ${MultiplLabelsSwitchButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/di
 #GeneralButtons
 ${DeleteButton}  //button[contains(.,'Delete')]
 ${ContinueButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/div/div[3]/button
-
+${SubmitButton}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div[1]/div/div[3]/div/div[2]/div/div[2]/button[2]
 
 

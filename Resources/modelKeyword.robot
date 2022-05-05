@@ -45,6 +45,10 @@ Open Top Burger Drop Down Menu
     Wait Until Page Contains Element  ${WorkspaceDropdownMenu}
     Click Element  ${WorkspaceDropdownMenu}
 
+Navigate to Workspace 387
+    Go to  https://app.labelf.ai/main/387/models/view
+
+
 Navigate to Workspace 60
     Wait Until Page Contains Element  //*[@href="/main/60/models/view"]
     Wait until Page Contains  Team Kimchi
@@ -120,6 +124,11 @@ All Labels Are Possible To Select
 That Model Is Trained With Three Labels
     Wait until Page Contains  Lets start by giving Labelf 16 samples
 
+User Navigate To Model Overview App
+    Go To  ${AppWorkspaceModelView}
+    Click Element  ${OverviewButton}
+    Wait Until Page Contains  Overview
+
 User Navigate To Model Overview
     Go To   ${StagWorkspaceModelView}
     Click Element  ${OverviewButton}
@@ -137,6 +146,7 @@ The Trained Labels Are Shown In Report
     Wait Until Element contains  ${SliceFakeNews}  16.7
 
 User Has Selected Bring Your Own Labels
+    Go To  ${StagLoginSite}
     Input User Credential
     Confirm Cookie
     Press Login Button

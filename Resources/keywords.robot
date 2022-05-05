@@ -22,8 +22,15 @@ End Model Creation Test
     Delete Single Automated Test Model
     Close Browser
 
+User Navigate/Login To App and Navigates To Workspace 387
+    Navigate to Workspace 387
+    Input User Credential
+    Confirm Cookie
+    Press Login Button
+    Confirm User Logged In
+    Wait Until Page Contains  Models | Team Kimchi
+
 Input User Credential
-    Go To  ${StagLoginSite}
     Wait Until Page Contains  Don't have an account? Sign up
     Input Text    ${LoginEmailField}  ${Email}
     Input Text    ${LoginPasswordField}  ${Password}
