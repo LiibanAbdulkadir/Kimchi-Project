@@ -146,6 +146,7 @@ The Trained Labels Are Shown In Report
     Wait Until Element contains  ${SliceFakeNews}  16.7
 
 User Has Selected Bring Your Own Labels
+    Go To  ${StagLoginSite}
     Input User Credential
     Confirm Cookie
     Press Login Button
