@@ -40,6 +40,9 @@ ${DataSelectCustomerSupportButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div
 ${DataSelectCustomerResponseButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/div[2]/button/div
 ${DataSelectPartlyPreLabledButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div/div[2]/button
 ${ContinueWithSelectedDatasetColumnButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[2]/button
+${ConnectAddtionalDatasetButton}  //*[contains(text(),' Connect additional datasets ')]
+${ConnectButton}  //*[contains(text(),' Connect ')]
+
 
 
 #Label Training
@@ -58,5 +61,5 @@ ${MultiplLabelsSwitchButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/di
 ${DeleteButton}  //button[contains(.,'Delete')]
 ${ContinueButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/div/div[3]/button
 ${SubmitButton}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div[1]/div/div[3]/div/div[2]/div/div[2]/button[2]
-
+${ContinueGenralButton}  //*[contains(.,'Continue')]
 
