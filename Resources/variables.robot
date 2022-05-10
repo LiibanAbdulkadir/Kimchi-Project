@@ -32,7 +32,7 @@ ${ModelDescription}  This is A Model
 ${CreateModelButton}  //button[contains(.,'Create Model')]
 ${StartTrainingButton}  //*[contains(text(),' Start training ')]
 ${SliceFakeNews}  css:div#plotly > div.plot-container.plotly > div > svg:nth-child(1) > g.pielayer > g > g:nth-child(3) > g
-${SliceEconomy}   css:div#plotly > div.plot-container.plotly > div > svg:nth-child(1) > g.pielayer > g > g:nth-child(1) > g
+${SliceEconomy}  css:div#plotly > div.plot-container.plotly > div > svg:nth-child(1) > g.pielayer > g > g:nth-child(1) >
 ${SliceSport}  css:div#plotly > div.plot-container.plotly > div > svg:nth-child(1) > g.pielayer > g > g:nth-child(2) > g
 
 #Dataset

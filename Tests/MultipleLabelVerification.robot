@@ -28,7 +28,7 @@ Verify that Sum Of confidence levels is higher than 100%
 Verify that one confidence level at least 50% when multiple lables are classified for a question
     [Documentation]  This Testcase Verify that one confidence level at least 50% when multiple lables are classified for a question
     [Tags]  Testcase 2
-    Given User Navigate To Model Overview App
+
     When User Inputs New Test Sentence With Multiple Labels into "Test Your Model"
     Then Retrive Confidence Level And Verify that Confidence Is Higher Than 50% When Sum
 
@@ -38,3 +38,5 @@ Verify that the categorization confidence levels matches the label of the origin
     Given User Navigate To Model Overview App
     When User Inputs confidence levels Sentence matches the label of the original datapoint into "Test Your Model"
     Then Confidence levels matches the label of the original datapoint
+
+
