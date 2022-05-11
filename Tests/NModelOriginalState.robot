@@ -24,3 +24,9 @@ Verify that user can disconnect the newly dataset
     When User Disconnects Additional Dataset
     Then Verify That The Page Is Not In Processing State
 
+Verify that “Only one dadaset” should be shown as connected on model overview.
+    [Documentation]  This testcase to Verify that “Only one dadaset” should be shown as connected on model overview.
+    [Tags]  Testcase 2
+    Given User Navigate/Login To App and Navigates To Workspace 387
+    When User Is On Model Overview
+    Then Verify “Only one dadaset” should be shown as connected

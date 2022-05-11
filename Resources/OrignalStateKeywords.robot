@@ -25,3 +25,12 @@ User Disconnects Additional Dataset
 Verify That The Page Is Not In Processing State
     Reload page
     Page Should Not Contain  I'm currently processing your data, come back later!
+
+User Is On Model Overview
+    click element  ${CustomerfeedbackModelOverview}
+
+Verify “Only one dadaset” should be shown as connected
+     Execute Javascript  window.scrollTo(0,850)
+     Wait until page contains  Connected Datasets
+     Page Should Contain  Customer feedback,Partly pre-labeled60
+     Page Should Not Contain element  ${CustomerServiceResponseDataSet}
