@@ -20,7 +20,7 @@ Verify that Sum Of confidence levels is higher than 100%
     [Documentation]  This Testcase Verify that Sum Of confidence levels is higher than 100% (Uses data from orginal datapoint)
     [Tags]  Testcase 1
     Given User Navigate/Login To App and Navigates To Workspace 387
-          User Navigate To Model Overview App
+          User Navigate To Model Overview App 1
     When User Inputs Test Sentence From Orginal Dataset into "Test Your Model"
     Then Retrive Confidence Level And Verify Confidence Is Higher Than 100% When Sum
 

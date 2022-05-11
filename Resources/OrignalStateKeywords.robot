@@ -1,5 +1,9 @@
 *** Keywords ***
 
+User Navigate To Model Overview App 2
+    Go To  ${AppWorkspaceModelView}
+    Click Element  ${OverviewPrelabledTestButton}
+    Wait Until Page Contains  Overview
 
 User Adds Additional Dataset To Model
     Wait Until Page Contains Element  ${ConnectAddtionalDatasetButton}

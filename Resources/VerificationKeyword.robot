@@ -1,5 +1,10 @@
 *** Keywords ***
 
+User Navigate To Model Overview App 1
+    Go To  ${AppWorkspaceModelView}
+    Click Element  ${OverviewPrelabledButton}
+    Wait Until Page Contains  Overview
+
 User Inputs Test Sentence From Orginal Dataset into "Test Your Model"
     Input Text  ${InputDescriptionTextField}  They always round up tickets for prizes from the "games". I don't think they'd turn a kid away from getting a little something!
     Click Button  ${SubmitButton}

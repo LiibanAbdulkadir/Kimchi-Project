@@ -124,11 +124,6 @@ All Labels Are Possible To Select
 That Model Is Trained With Three Labels
     Wait until Page Contains  Lets start by giving Labelf 16 samples
 
-User Navigate To Model Overview App
-    Go To  ${AppWorkspaceModelView}
-    Click Element  ${OverviewButton}
-    Wait Until Page Contains  Overview
-
 User Navigate To Model Overview
     Go To   ${StagWorkspaceModelView}
     Click Element  ${OverviewButton}
