@@ -20,7 +20,7 @@ Verify that user can disconnect the newly dataset
     [Documentation]  This Testcase Verify that user can disconnect the newly dataset
     [Tags]  Testcase 1
     Given User Navigate/Login To App and Navigates To Workspace 387
-          User Navigate To Model Overview App
+          User Navigate To Model Overview App 2
     When User Disconnects Additional Dataset
     Then Verify That The Page Is Not In Processing State
 
