@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
+                cleanWs()
                 git branch: 'main', url: 'https://github.com/LiibanAbdulkadir/Kimchi-Project.git'
             }
         }
