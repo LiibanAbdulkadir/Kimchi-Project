@@ -16,11 +16,11 @@ Suite Teardown  End Web Test
 
 *** Test Cases ***
 
-User Adds Additional Dataset
-    [Documentation]  This Testcase Adds Additional Dataset to model and disconnects dataset in NModel to minimize time waste.
+Verify that user can disconnect the newly dataset
+    [Documentation]  This Testcase Verify that user can disconnect the newly dataset
     [Tags]  Testcase 1
     Given User Navigate/Login To App and Navigates To Workspace 387
           User Navigate To Model Overview App
-    When User Adds Additional Dataset To Model
-         #User Disconnects Additional Dataset
+    When User Disconnects Additional Dataset
+    Then Verify That The Page Is Not In Processing State
 

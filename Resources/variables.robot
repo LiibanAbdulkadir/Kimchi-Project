@@ -42,6 +42,8 @@ ${DataSelectPartlyPreLabledButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div
 ${ContinueWithSelectedDatasetColumnButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[2]/button
 ${ConnectAddtionalDatasetButton}  //*[contains(text(),' Connect additional datasets ')]
 ${ConnectButton}  //*[contains(text(),' Connect ')]
+${DisconnectButton}  //span[contains(.,' Disconnect dataset ')]
+${DisconnectAfirmButton}  //Button[contains(.,' Disconnect ')]
 
 
 
