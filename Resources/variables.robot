@@ -28,7 +28,7 @@ ${DeleteOption}  //*[@class="v-icon icon-menu-danger material-icons theme--light
 # Model
 ${ContinueCreateModelButton}  //button[contains(.,'Continue')]
 ${InputNameTextField}  //input[contains(@aria-label,'Name*')]
-${ModelName}   Data Model
+${ModelName}  Data Model
 ${InputDescriptionTextField}  //*[@name="input-7-1"]
 ${ModelDescription}  This is A Model
 ${CreateModelButton}  //button[contains(.,'Create Model')]
@@ -66,5 +66,4 @@ ${DeleteButton}  //button[contains(.,'Delete')]
 ${ContinueButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[4]/div/div/div[3]/button
 ${SubmitButton}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div[1]/div/div[3]/div/div[2]/div/div[2]/button[2]
 ${ContinueGenralButton}  //*[contains(.,'Continue')]
-${CustomerfeedbackModelOverview}  //*[@id="app"]/div[8]/div[1]/main/div/div/div[3]/div/div[1]/div/div/div/nav/div/div[1]/a
-${CustomerServiceResponseDataSet}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[2]/div/div[1]/div/div[6]/div/div[2]/div/div/div[2]/div/div/div[1]
+

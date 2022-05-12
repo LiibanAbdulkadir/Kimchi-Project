@@ -15,7 +15,9 @@ User Adds Additional Dataset To Model
     Click element  //*[@id="app"]/div[4]/div/div/div/div[5]/div/div/div[3]/button/div
 
 User Disconnects Additional Dataset
-      Scroll Element Into View  ${DisconnectButton}
+      Execute Javascript  window.scrollTo(0,1050)
+      Reload page
+      Execute Javascript  window.scrollTo(0,1050)
       Click Element  ${DisconnectButton}
 
       Wait Until Page Contains Element  ${DisconnectAfirmButton}
@@ -23,14 +25,21 @@ User Disconnects Additional Dataset
 
 
 Verify That The Page Is Not In Processing State
-    Reload page
-    Page Should Not Contain  I'm currently processing your data, come back later!
+    Go to  ${AppWorkspaceModelView}
+    Page Should Not Contain  Processing
 
 User Is On Model Overview
-    click element  ${CustomerfeedbackModelOverview}
+    Click element  ${OverviewPrelabledTestButton}
 
 Verify “Only one dadaset” should be shown as connected
      Execute Javascript  window.scrollTo(0,850)
      Wait until page contains  Connected Datasets
      Page Should Contain  Customer feedback,Partly pre-labeled60
-     Page Should Not Contain element  ${CustomerServiceResponseDataSet}
+     ${CountDatasets}=  Get Element count  //span[contains(.,' Disconnect dataset ')]
+     #log to console  ${CountDatasets}
+     ${CountDatasetsCheckValue} =  set variable  1
+
+     IF  ${CountDatasetsCheckValue} < ${CountDatasets}
+     Log to console  More than 1 dataset in model
+     Fail
+     END
