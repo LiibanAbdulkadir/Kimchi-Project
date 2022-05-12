@@ -10,6 +10,7 @@ Resource  ../Resources/VerificationKeyword.robot
 Library  SeleniumLibrary
 Library  String
 
+
 Suite Setup  Begin Web Test
 Suite Teardown  End Web Test
 
@@ -38,5 +39,4 @@ Verify that the categorization confidence levels matches the label of the origin
     Given User Navigate To Model Overview App 1
     When User Inputs confidence levels Sentence matches the label of the original datapoint into "Test Your Model"
     Then Confidence levels matches the label of the original datapoint
-
 
