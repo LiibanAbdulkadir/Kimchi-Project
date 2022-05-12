@@ -29,6 +29,9 @@ Select Costumer Service Response as Dataset
      Click Element  ${ContinueWithSelectedDatasetColumnButton}
 
 Set A Name And Description For Model
+     FOR  ${INT}  IN RANGE  36
+        Press Key  ${InputNameTextField}  \\8
+     END
      Press Keys  ${InputNameTextField}  CTRL+A+DELETE
      Input Text  ${InputNameTextField}   ${ModelName}
      Input Text   ${InputDescriptiontextField}  ${ModelDescription}

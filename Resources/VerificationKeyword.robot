@@ -68,11 +68,11 @@ Confidence levels matches the label of the original datapoint
     #${ElementCount}=  Get Element count  //div[contains(@class,'v-toolbar__content')]
     #log to console  ${ElementCount}
 
-    ${confidenceRank1}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[10]  #Rank1
-    ${confidenceRank1}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[10]  #Two variables share the same xpath position need to run the code twice to Pick the right one!
-    ${confidenceRank2}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[11]  #Rank2
-    ${confidenceRank3}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[12]  #Rank3
-    ${confidenceRank4}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[13]  #Rank4
+    ${confidenceRank1}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[11]  #Rank1
+    ${confidenceRank1}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[11]  #Two variables share the same xpath position need to run the code twice to Pick the right one!
+    ${confidenceRank2}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[12]  #Rank2
+    ${confidenceRank3}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[13]  #Rank3
+    ${confidenceRank4}=  get text  xpath:(//div[contains(@class,'v-toolbar__content')])[14]  #Rank4
     Log to console  .
     Log to console  ${confidenceRank4}
     Log to console  ---------
@@ -102,4 +102,3 @@ Confidence levels matches the label of the original datapoint
         Log to console  ERROR DOES NOT MATCH ANY CONFIDENCELEVEL
         FAIL
     END
-

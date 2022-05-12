@@ -19,7 +19,8 @@ ${ConfirmCookieButton}  //*[@id="diffuse-cookie-notice"]/div/div/div/div[2]/butt
 ${StagWorkspaceModelView}  https://stag.labelf.ai/main/60/models/view
 ${AppWorkspaceModelView}  https://app.labelf.ai/main/387/models/view
 ${SingleModelOptionsButton}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/nav/div/div[3]/div/button/div/i
-${OverviewPrelabledButton}  //*[contains(@href,'/main/387/models/3053/dashboard/dashboard')]
+${OverviewButton}  //*[@id="app"]/div[7]/div[1]/main/div/div/div[3]/div/div/div/div/div/div[2]/a/div
+${OverviewPrelabledButton}  //*[contains(@href,'/main/387/models/3082/dashboard/dashboard')]
 ${OverviewPrelabledTestButton}  //*[contains(@href,'/main/387/models/3049/dashboard/dashboard')]
 ${NewModelButton}   //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a
 ${DeleteOption}  //*[@class="v-icon icon-menu-danger material-icons theme--light"]
@@ -33,7 +34,7 @@ ${ModelDescription}  This is A Model
 ${CreateModelButton}  //button[contains(.,'Create Model')]
 ${StartTrainingButton}  //*[contains(text(),' Start training ')]
 ${SliceFakeNews}  css:div#plotly > div.plot-container.plotly > div > svg:nth-child(1) > g.pielayer > g > g:nth-child(3) > g
-${SliceEconomy}  css:div#plotly > div.plot-container.plotly > div > svg:nth-child(1) > g.pielayer > g > g:nth-child(1) >
+${SliceEconomy}  css:div#plotly > div.plot-container.plotly > div > svg:nth-child(1) > g.pielayer > g > g:nth-child(1) > g
 ${SliceSport}  css:div#plotly > div.plot-container.plotly > div > svg:nth-child(1) > g.pielayer > g > g:nth-child(2) > g
 
 #Dataset
