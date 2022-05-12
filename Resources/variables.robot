@@ -23,6 +23,8 @@ ${OverviewPrelabledButton}  //*[contains(@href,'/main/387/models/3053/dashboard/
 ${OverviewPrelabledTestButton}  //*[contains(@href,'/main/387/models/3049/dashboard/dashboard')]
 ${NewModelButton}   //*[@id="app"]/div[6]/div[1]/main/div/div/div[1]/nav/div[1]/a
 ${DeleteOption}  //*[@class="v-icon icon-menu-danger material-icons theme--light"]
+${ModelID3084NameButtonInWorkspace}  //*[contains(@href,'/main/387/models/3084/dashboard/dashboard')]
+${ModelsButtonInMainBar}  //*[@id="models-button-navbar"]/div
 
 # Model
 ${ContinueCreateModelButton}  //button[contains(.,'Continue')]
@@ -41,6 +43,7 @@ ${DataSelectCustomerSupportButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div
 ${DataSelectCustomerResponseButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/div[2]/button/div
 ${DataSelectPartlyPreLabledButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div/div[2]/button
 ${ContinueWithSelectedDatasetColumnButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[2]/button
+${ContinueButtonDatasetID470}  //*[@id="app"]/div[4]/div/div/div/div[3]/div/div/div[1]/div[2]/div/div/div[2]/button
 ${ConnectAddtionalDatasetButton}  //*[contains(text(),' Connect additional datasets ')]
 ${ConnectButton}  //*[contains(text(),' Connect ')]
 ${DisconnectButton}  //span[contains(.,' Disconnect dataset ')]
