@@ -32,17 +32,17 @@ Verify the number of data points in the model is increased.
 
 user Navigate To Model Overview App 4
     Wait Until Page Contains  Models
-    Click Element  //*[@id="app"]/div[10]/div[1]/main/div/div/div[3]/div/div[1]/div/div/div/div[1]
+    Click Element  ${ModelID3085NameButtonInWorkspace}
 
 User Connects The New Dataset From The Model Overview
     Execute Javascript  window.scrollTo(0,1000)
     Wait Until Page Contains Element  ${ConnectAddtionalDatasetButton}
     Click Element  ${ConnectAddtionalDatasetButton}
     Wait Until Page Contains  Datasets available to connect
-    Click Element  //*[@id="app"]/div[4]/div/div/div/div[3]/div/div/div[1]/div[2]/div/div/div[2]/button
+    Click Element  ${ContinueButtonDatasetID470}
     Wait Until Page Contains  Select the column which contains the text
-    Scroll Element Into View  //*[@id="app"]/div[4]/div/div/div/div[5]/div/div/div[3]/button/div
-    Click element  //*[@id="app"]/div[4]/div/div/div/div[5]/div/div/div[3]/button/div
+    Scroll Element Into View  ${ConnectButton}
+    Click element  ${ConnectButton}
 
 
 Check The Number Of DatPoints Before Adding Additional DataSet
