@@ -43,6 +43,10 @@ ${DataSelectCustomerSupportButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div
 ${DataSelectCustomerResponseButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div/div/div/div[2]/button/div
 ${DataSelectPartlyPreLabledButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[2]/div/div[2]/div/div[2]/div/div/div[2]/button
 ${ContinueWithSelectedDatasetColumnButton}  //*[@id="app"]/div[2]/div/div/div[2]/div/div[3]/div/div/div[2]/button
+${UseLabelsToContinueToTrainTheModelCheckBox}  //*[contains(text(),'Use labels to continue to train the model')]
+${ContinueButtonWhenAddNewDataset}  //*[@id="app"]/div[4]/div/div/div/div[5]/div/div/div[3]/button
+${LabelCheckBoxWhenAddNewDataset}  //*[@id="app"]/div[4]/div/div/div/div[6]/div/div/div[1]/div/table/thead/tr[1]/th[3]
+${ConnectButtonWhenAddNewDataset}  //*[@id="connect-button"]
 ${ContinueButtonDatasetID470}  //*[@id="app"]/div[4]/div/div/div/div[3]/div/div/div[1]/div[2]/div/div/div[2]/button
 ${ConnectAddtionalDatasetButton}  //*[contains(text(),' Connect additional datasets ')]
 ${ConnectButton}  //*[contains(text(),' Connect ')]

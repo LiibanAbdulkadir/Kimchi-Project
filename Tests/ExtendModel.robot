@@ -37,13 +37,24 @@ User Adds A New Additional Dataset To Model
     Click Element  ${ConnectAddtionalDatasetButton}
     Wait Until Page Contains Element  ${ContinueButtonDatasetID470}
     Click Element  ${ContinueButtonDatasetID470}
+    Wait Until Page Contains Element  ${UseLabelsToContinueToTrainTheModelCheckBox}
+    Click Element  ${UseLabelsToContinueToTrainTheModelCheckBox}
+    Scroll Element Into View  ${ContinueButtonWhenAddNewDataset}
+    Wait Until Page Contains Element  ${ContinueButtonWhenAddNewDataset}
+    Click Button  ${ContinueButtonWhenAddNewDataset}
+    Wait Until Page Contains Element  ${LabelCheckBoxWhenAddNewDataset}
+    Sleep  0.2s
+    Click Element  ${LabelCheckBoxWhenAddNewDataset}
+    Scroll Element Into View  ${ConnectButtonWhenAddNewDataset}
+    Sleep  0.2s
+    Wait Until Page Contains Element  ${ConnectButtonWhenAddNewDataset}
+    Click Element  ${ConnectButtonWhenAddNewDataset}
+    Page Should Contain  Second multilabeled dataset
+
 
 Verify That The Model Is In Processing State
-    Wait Until Page Contains  Datasets available to connect
-    Scroll Element Into View  ${ConnectButton}
-    Wait Until Page Contains Element  ${ConnectButton}
-    Click Element  ${ConnectButton}
-    Page Should Contain  Second multilabeled dataset
+    Scroll Element Into View  ${StartTrainingButton}
+    Wait Until Page Contains Element  ${ModelsButtonInMainBar}
     Click Element  ${ModelsButtonInMainBar}
     Wait Until Page Contains  Team Kimchi
     Page Should Contain  Processing
