@@ -160,6 +160,10 @@ User Inputs an example from the first dataset to the test the model
       Input Text  ${InputDescriptionTextField}  known to be rude and unwelcoming
       Click Button  ${SubmitButton}
 
+User Inputs an example from the newly dataset to the test the model
+      Input Text  ${InputDescriptionTextField}  A safe and varied alternative to the streets and other negative influences in the community.
+      Click Button  ${SubmitButton}
+
 User Adds A New Additional Dataset To Model
     Scroll Element Into View  ${ConnectAddtionalDatasetButton}
     Wait Until Page Contains Element  ${ConnectAddtionalDatasetButton}
