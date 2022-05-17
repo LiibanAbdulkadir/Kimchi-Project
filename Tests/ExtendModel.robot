@@ -16,6 +16,7 @@ Suite Teardown  End Web Test
 
 *** Test Cases ***
 
+# KI-97 refactoring
 Verify That The Model Shall Be In State Processing When A New Dataset Is Connected.
     [Documentation]  This Testcase Verify that the model is in processing.
     [Tags]  Testcase 2
