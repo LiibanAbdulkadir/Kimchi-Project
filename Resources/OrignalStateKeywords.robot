@@ -19,7 +19,7 @@ User Navigate To Model Overview App 3
     Click Element  ${ModelID3084NameButtonInWorkspace}
     Wait Until Page Contains Element  ${StartTrainingButton}
 
-User Adds Additional Dataset To Model
+User Adds Additional Dataset To Model 2
     Wait Until Page Contains Element  ${ConnectAddtionalDatasetButton}
     Click Element  ${ConnectAddtionalDatasetButton}
     Click element  css : div#app > div.v-dialog__content.v-dialog__content--active > div > div > div > div:nth-child(3) > div > div > div:nth-child(2) > div > div > div > div.v-card__actions > button
@@ -44,7 +44,6 @@ Verify “Only one dadaset” should be shown as connected
 
 
 User Disconnects Additional Dataset
-      Execute Javascript  window.scrollTo(0,1050)
       Reload page
       Execute Javascript  window.scrollTo(0,1050)
       Click Element  ${DisconnectButton}
@@ -53,19 +52,15 @@ User Disconnects Additional Dataset
       Click Button  ${DisconnectAfirmButton}
 
 Disconnects Dataset for Model 3 and 4
-
     Go to  https://app.labelf.ai/main/387/models/view
     User Navigate To Model Overview App 3
+    Execute Javascript  window.scrollTo(0,1050)
     User Disconnects Additional Dataset
-    Reload Page
-    Verify “Only one dadaset” should be shown as connected
-
 
     Go to  https://app.labelf.ai/main/387/models/view
     User Navigate To Model Overview App 4
+    Execute Javascript  window.scrollTo(0,1050)
     User Disconnects Additional Dataset
-    Reload Page
-    Verify “Only one dadaset” should be shown as connected
 
 Verify That The Page Is Not In Processing State
     Go to  ${AppWorkspaceModelView}

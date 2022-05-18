@@ -108,7 +108,7 @@ Confidence levels matches the label of the original datapoint
     END
 
 
-User Connects The New Dataset From The Model Overview
+User Connects The New Dataset From The Model Overview 4
     Execute Javascript  window.scrollTo(0,1000)
     Wait Until Page Contains Element  ${ConnectAddtionalDatasetButton}
     Click Element  ${ConnectAddtionalDatasetButton}
@@ -132,7 +132,7 @@ User Connects The New Dataset From The Model Overview
     Click element  ${ConnectButton}
 
 
-User Adds A New Additional Dataset To Model
+User Adds A New Additional Dataset To Model 3
     Scroll Element Into View  ${ConnectAddtionalDatasetButton}
     Wait Until Page Contains Element  ${ConnectAddtionalDatasetButton}
     Click Element  ${ConnectAddtionalDatasetButton}
@@ -153,21 +153,21 @@ User Adds A New Additional Dataset To Model
     Page Should Contain  Second multilabeled dataset
 
 
-Check The Number Of DatPoints Before Adding Additional DataSet
+Check The Number Of DatPoints Before Adding Additional DataSet App 4
     go to  https://app.labelf.ai/main/387/models/view
     Wait Until Element Is Visible  ${NumberTextBefore}
     ${NumberString}  Get Text  ${NumberTextBefore}
     ${IntbeforeIncrease}  Removetext   ${NumberString}
     Set Global Variable  ${IntbeforeIncrease}
 
-Check The Number Of DatPoints After Adding Additional DataSet
+Check The Number Of DatPoints After Adding Additional DataSet App 4
     Wait Until Element Is Visible  ${StringNumberAfterAddDataSet}
     ${NumberString}  Get Text  ${StringNumberAfterAddDataSet}
-     ${IntAfterIncrease}  Removetext   ${NumberString}
+    ${IntAfterIncrease}  Removetext   ${NumberString}
     Set Global Variable  ${IntAfterIncrease}
 
 
-Verify That The number of dataPoints in the model is increased
+Verify That The number of dataPoints in the model is increased App 4
     go to  https://app.labelf.ai/main/387/models/view
     Wait Until Element Is Visible  ${StringNumberAfterAddDataSet}
     Should Be True  ${IntbeforeIncrease} < ${IntAfterIncrease}

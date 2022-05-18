@@ -19,7 +19,7 @@ ${BROWSER}  chrome
 
 *** Test Cases ***
 User Login To Labelf
-    [Documentation]  Testcase for user login to labelf
+    [Documentation]  Testcase for user login to labelf   #Create Keyword
     [Tags]  Testcase 1  stagWorkspace
     Given Go To  ${StagLoginSite}
           Input User Credential
