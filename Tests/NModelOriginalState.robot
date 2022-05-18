@@ -19,7 +19,7 @@ Suite Teardown  End Web Test
 
 Verify that user can disconnect the newly dataset
     [Documentation]  This Testcase Verify that user can disconnect the newly dataset
-    [Tags]  Testcase 1
+    [Tags]  Testcase 1  appWorkspace
     Given User Navigate/Login To App and Navigates To Workspace 387
           User Navigate To Model Overview App 2
     When User Disconnects Additional Dataset
@@ -27,8 +27,8 @@ Verify that user can disconnect the newly dataset
 
 Verify that “Only one dadaset” should be shown as connected on model overview.
     [Documentation]  This testcase to Verify that “Only one dadaset” should be shown as connected on model overview.
-    [Tags]  Testcase 2
-    Given Navigates To Workspace 387
+    [Tags]  Testcase 2  appWorkspace
+    Given Navigate to Workspace 387
     When User Is On Model Overview
     Then Verify “Only one dadaset” should be shown as connected
 
