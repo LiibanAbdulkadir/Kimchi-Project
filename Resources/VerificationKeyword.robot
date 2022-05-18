@@ -1,10 +1,5 @@
 *** Keywords ***
 
-User Navigate To Model Overview App 1
-    Go To  ${AppWorkspaceModelView}
-    Click Element  ${OverviewPrelabledButton}
-    Wait Until Page Contains  Overview
-
 User Inputs Test Sentence From Orginal Dataset into "Test Your Model"
     Input Text  ${InputDescriptionTextField}  They always round up tickets for prizes from the "games". I don't think they'd turn a kid away from getting a little something!
     Click Button  ${SubmitButton}
@@ -16,6 +11,15 @@ User Inputs New Test Sentence With Multiple Labels into "Test Your Model"
 User Inputs confidence levels Sentence matches the label of the original datapoint into "Test Your Model"
     Input Text  ${InputDescriptionTextField}  Do not greet you
     Click Button  ${SubmitButton}
+
+User Inputs an example from the newly dataset to the test the model
+      Input Text  ${InputDescriptionTextField}  A safe and varied alternative to the streets and other negative influences in the community.
+      Click Button  ${SubmitButton}
+
+User Inputs an example from the first dataset to the test the model
+      Input Text  ${InputDescriptionTextField}  known to be rude and unwelcoming
+      Click Button  ${SubmitButton}
+
 
 Retrive Confidence Level And Verify Confidence Is Higher Than 100% When Sum
     ${ElementCount}=  Get Element count  //div[contains(@class,'v-toolbar__title body-2')]
@@ -103,14 +107,6 @@ Confidence levels matches the label of the original datapoint
         FAIL
     END
 
-user Navigate To Model Overview App 4
-    Wait Until Page Contains  Models
-    Click Element  ${ModelID3085NameButtonInWorkspace}
-
-User Navigate To Model Overview App 3
-    Wait Until Page Contains  Team Kimchi
-    Click Element  ${ModelID3084NameButtonInWorkspace}
-    Wait Until Page Contains Element  ${StartTrainingButton}
 
 User Connects The New Dataset From The Model Overview
     Execute Javascript  window.scrollTo(0,1000)
@@ -136,34 +132,6 @@ User Connects The New Dataset From The Model Overview
     Click element  ${ConnectButton}
 
 
-Check The Number Of DatPoints Before Adding Additional DataSet
-    go to  https://app.labelf.ai/main/387/models/view
-    Wait Until Element Is Visible  ${NumberTextBefore}
-    ${NumberString}  Get Text  ${NumberTextBefore}
-    ${IntbeforeIncrease}  Removetext   ${NumberString}
-    Set Global Variable  ${IntbeforeIncrease}
-
-Check The Number Of DatPoints After Adding Additional DataSet
-    Wait Until Element Is Visible  ${StringNumberAfterAddDataSet}
-    ${NumberString}  Get Text  ${StringNumberAfterAddDataSet}
-     ${IntAfterIncrease}  Removetext   ${NumberString}
-    Set Global Variable  ${IntAfterIncrease}
-
-
-Verify That The number of dataPoints in the model is increased
-    go to  https://app.labelf.ai/main/387/models/view
-    Wait Until Element Is Visible  ${StringNumberAfterAddDataSet}
-    Should Be True  ${IntbeforeIncrease} < ${IntAfterIncrease}
-    Log to console  ${IntbeforeIncrease} < ${IntAfterIncrease}
-
-User Inputs an example from the first dataset to the test the model
-      Input Text  ${InputDescriptionTextField}  known to be rude and unwelcoming
-      Click Button  ${SubmitButton}
-
-User Inputs an example from the newly dataset to the test the model
-      Input Text  ${InputDescriptionTextField}  A safe and varied alternative to the streets and other negative influences in the community.
-      Click Button  ${SubmitButton}
-
 User Adds A New Additional Dataset To Model
     Scroll Element Into View  ${ConnectAddtionalDatasetButton}
     Wait Until Page Contains Element  ${ConnectAddtionalDatasetButton}
@@ -185,9 +153,31 @@ User Adds A New Additional Dataset To Model
     Page Should Contain  Second multilabeled dataset
 
 
+Check The Number Of DatPoints Before Adding Additional DataSet
+    go to  https://app.labelf.ai/main/387/models/view
+    Wait Until Element Is Visible  ${NumberTextBefore}
+    ${NumberString}  Get Text  ${NumberTextBefore}
+    ${IntbeforeIncrease}  Removetext   ${NumberString}
+    Set Global Variable  ${IntbeforeIncrease}
+
+Check The Number Of DatPoints After Adding Additional DataSet
+    Wait Until Element Is Visible  ${StringNumberAfterAddDataSet}
+    ${NumberString}  Get Text  ${StringNumberAfterAddDataSet}
+     ${IntAfterIncrease}  Removetext   ${NumberString}
+    Set Global Variable  ${IntAfterIncrease}
+
+
+Verify That The number of dataPoints in the model is increased
+    go to  https://app.labelf.ai/main/387/models/view
+    Wait Until Element Is Visible  ${StringNumberAfterAddDataSet}
+    Should Be True  ${IntbeforeIncrease} < ${IntAfterIncrease}
+    Log to console  ${IntbeforeIncrease} < ${IntAfterIncrease}
+
+
 Verify That The Model Is In Processing State
     Scroll Element Into View  ${StartTrainingButton}
     Wait Until Page Contains Element  ${ModelsButtonInMainBar}
     Click Element  ${ModelsButtonInMainBar}
     Wait Until Page Contains  Team Kimchi
     Page Should Contain  Processing
+

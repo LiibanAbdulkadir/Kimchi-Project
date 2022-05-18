@@ -22,5 +22,5 @@ User Adds Additional Dataset
     Given User Navigate/Login To App and Navigates To Workspace 387
           User Navigate To Model Overview App 2
     When User Adds Additional Dataset To Model
-         #User Disconnects Additional Dataset
+
 
