@@ -15,6 +15,7 @@ Begin Web Test
     Set Window Size  ${1600}  ${1050}
     Set Selenium speed  0.3  # Set to 0.5 for video capture of test suite
 
+
 End Web Test
     Close Browser
 
