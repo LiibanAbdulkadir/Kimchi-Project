@@ -107,7 +107,6 @@ Confidence levels matches the label of the original datapoint
         FAIL
     END
 
-
 User Connects The New Dataset From The Model Overview 4
     Execute Javascript  window.scrollTo(0,1000)
     Wait Until Page Contains Element  ${ConnectAddtionalDatasetButton}

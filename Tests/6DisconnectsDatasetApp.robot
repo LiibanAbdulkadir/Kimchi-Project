@@ -27,8 +27,14 @@ Verify that user can disconnect the newly dataset
 
 Disconnects Dataset for app 3 and 4
     [Documentation]  This testcase Disconnects Dataset for app 3 and 4
-    [Tags]  Testcase 5 appWorkspace
+    [Tags]  Testcase 2 appWorkspace
     Navigate to Workspace 387
     Disconnects Dataset for Model 3 and 4
 
 
+Verify that “Only one dadaset” should be shown as connected on model overview.
+    [Documentation]  This testcase to Verify that “Only one dadaset” should be shown as connected on model overview.
+    [Tags]  Testcase 3 appWorkspace
+    Given Navigate to Workspace 387
+    When User Is On Model Overview
+    Then Verify “Only one dadaset” should be shown as connected
